@@ -1,20 +1,14 @@
-import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
+import useCategories from "./../../hooks/useCategories";
 import { CardCategory } from "./../../components";
-import { getPrincipalCategories } from "./../../services/api-shop";
 import "./home.css";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    getPrincipalCategories().then((data) => {
-      setCategories(data);
-    });
-  }, []);
+  const [categories] = useCategories();
 
   return (
     <div className="home-page">
@@ -29,7 +23,7 @@ const HomePage = () => {
         </div>
         <div className="container d-flex justify-content-start">
           {categories?.map((c) => (
-              <CardCategory key={c.id} category={c} />
+            <CardCategory key={c.id} category={c} />
           ))}
         </div>
       </section>

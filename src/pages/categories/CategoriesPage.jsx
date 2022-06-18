@@ -1,31 +1,36 @@
-import { useState, useEffect } from "react";
-
 import { RowCategory } from "./../../components";
-import { getAllCategories } from "./../../services/api-shop";
 import { IoIosSearch } from "react-icons/io";
+
+import useCategories from "./../../hooks/useCategories";
 
 import "./index.css";
 
 const CategoriesPage = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    getAllCategories().then((data) => {
-      setCategories(data);
-    });
-  }, []);
+  const [categories, filters, filterCategories] = useCategories();
   return (
     <div>
       <div className="categories-nav container d-flex justify-content-between align-items-start">
         <ul className="categories-nav-filters d-flex justify-content-start flex-wrap">
-          <li className="item">
+          <li
+            className="item"
+            onClick={() => {
+              filterCategories("all");
+            }}
+          >
             <a className="" href="#">
               All
             </a>
           </li>
-          {categories?.map((c) => (
-            <li className="item" key={c.id}>
+          {filters?.map((f) => (
+            <li
+              className="item"
+              key={f.id}
+              onClick={() => {
+                filterCategories(f.title);
+              }}
+            >
               <a className="" href="#">
-                {c.title}
+                {f.title}
               </a>
             </li>
           ))}
