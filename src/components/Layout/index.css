@@ -1,0 +1,64 @@
+/* Header  */
+.header {
+  position: sticky;
+  background-color: var(--white);
+  /*height: auto;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 0;
+  z-index: 4000;
+}
+.logo {
+  width: 174px;
+  height: 60px;
+}
+.btn-login {
+  color: var(--dark-gray) !important;
+}
+.btn-login:hover {
+  color: var(--black) !important;
+}
+.shoppingCart {
+  border-left: 1px solid var(--light-gray);
+  padding-left: 20px;
+}
+.btn-cart {
+  height: 40px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 20px;
+  border: none;
+  box-shadow: 0 0 6px rgb(163 171 193 / 16%);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.btn-cart:hover {
+  background-color: var(--orange) !important;
+}
+
+/* Cinta  */
+
+.cinta {
+  height: 42px;
+  background-color: var(--light-gray);
+  text-align: center;
+}
+
+.cinta p {
+  line-height: 42px;
+  color: black;
+}
+/* Footer  */
+
+footer {
+  background-color: var(--black);
+  height: 60px;
+}
+footer a {
+  text-decoration: none;
+  margin: 7px;
+}

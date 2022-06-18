@@ -1,0 +1,16 @@
+.banner {
+  height: 420px;
+  background-image: url("https://venezuela-news.com/wp-content/uploads/2021/12/VN_nacho.jpg");
+  background-color: silver;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*.section-categories{
+  padding: 60px;
+}*/
+hr {
+  /*  margin: 60px;*/
+  background-color: var(--dark-gray);
+}
