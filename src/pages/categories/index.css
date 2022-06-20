@@ -35,7 +35,7 @@ form {
 form input {
   border: none !important;
 }
-form input:focus{
+form input:focus {
   outline: none !important;
   border-color: none;
   /*outline: red;*/

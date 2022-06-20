@@ -9,11 +9,7 @@ const CardCategory = ({ category }) => {
   }
   return (
     <div className="card-category p-1 pointer" onClick={handleCardClick}>
-      <img
-        className="img-fluid"
-        src={category.url}
-        alt={category.title}
-      />
+      <img className="img-fluid" src={category.url} alt={category.title} />
       <h3 className="text-center p-2"> {category.title}</h3>
     </div>
   );

@@ -54,11 +54,11 @@
 }
 /* Footer  */
 
-footer {
+.footer {
   background-color: var(--black);
   height: 60px;
 }
-footer a {
+.footer a {
   text-decoration: none;
   margin: 7px;
 }

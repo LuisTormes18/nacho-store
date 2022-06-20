@@ -3,7 +3,6 @@
   max-width: 260px;
   margin: 0 10px;
   border-radius: 8px;
-
 }
 .card-product {
   cursor: pointer;
@@ -14,6 +13,6 @@
   max-width: 240px;
   /*max-height: 400px;*/
 }
-.card-img-top{
+.card-img-top {
   height: 170px !important;
 }

@@ -7,7 +7,7 @@ const Footer = () => {
   let iconColor = "white";
   let iconSize = 16;
   return (
-    <footer className="d-flex align-items-center">
+    <footer className="footer d-flex align-items-center">
       <div className="container d-flex justify-content-between align-items-center">
         <div className="">
           <a href="#">

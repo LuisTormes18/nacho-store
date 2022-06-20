@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { IoIosAdd } from "react-icons/io";
+import { RiDeleteBinLine, RiAddLine, RiSubtractLine } from "react-icons/ri";
 
 import { closeModalCart } from "../../stateManagement/actions/ui";
 import {
@@ -34,7 +33,7 @@ const ModalCart = () => {
       left: "auto",
       right: "10%",
       height: "450px",
-      padding: "10px",
+      padding: "0px",
       backgroundColor: "#FFF",
       border: "none",
       width: "340px",
@@ -74,26 +73,42 @@ const ModalCart = () => {
         style={customStyles}
         contentLabel="Cart Modal"
       >
-        <div className=" h-100">
-          <h2>Tienes {productsInCart.length} producto</h2>
+        <div className="h-100 cart">
+          <header className="p-3 pb-0">
+            <h4>Tienes {productsInCart.length} producto</h4>
+          </header>
           <hr />
-          {productsInCart.map((product) => (
-            <div className="product-item container d-flex justify-content-between">
-              <img src={product.url} alt="img-fluid" />
-              <div>
-                <h6>Gorra negra pequeña</h6>
+          <div className="p-2 body">
+            {productsInCart.map((product) => (
+              <div className="product-item d-flex align-items-center">
+                <img className="img me-3" src={product.url} alt="" />
+
                 <div>
-                  <IoIosAdd size="30" />
-                  <span>1</span>
-                  <IoIosAdd size="30" />
+                  <h6>Gorra negra pequeña</h6>
+
+                  <RiSubtractLine className="icon" size="15" />
+                  <span>
+                    <b>1</b>
+                  </span>
+                  <RiAddLine className="icon" size="15" />
+                </div>
+                <div className="push-right d-flex flex-column ms-5 align-items-end">
+                  <p>20$</p>
+                  <RiDeleteBinLine size="25" />
                 </div>
               </div>
-              <div className="d-flex flex-column">
-                <span>20$</span>
-                <RiDeleteBinLine />
-              </div>
+            ))}
+          </div>
+          <footer className="container p-4 d-flex flex-column">
+            <div className="d-flex justify-content-betwen">
+              <span>Subtotal</span>
+
+              <span>20$</span>
             </div>
-          ))}
+            <hr />
+            <button className="btn btn-warning">Continuar compra</button>
+            <button className="btn ">vaciar carrito</button>
+          </footer>
         </div>
       </Modal>
     );
