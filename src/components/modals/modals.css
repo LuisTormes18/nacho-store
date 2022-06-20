@@ -1,0 +1,14 @@
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+}
+.btn-mini{
+    border: 1px solid var(--light-gray);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.product-item{
+    border-bottom: 1px solid var(--light-gray);
+}

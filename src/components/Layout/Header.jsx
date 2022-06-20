@@ -1,12 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { MdShoppingCart } from "react-icons/md";
 
-import { openModalContainer } from "./../../stateManagement/actions/ui";
-import ModalContainer from "./../modal/ModalContainer";
-import FormLogin from "./../auth/FormLogin";
 import Cinta from "./Cinta";
 
 import "./index.css";
+import {
+  openModalLogin,
+  openModalCart,
+} from "./../../stateManagement/actions/ui";
+import ModalLogin from "./../modals/ModalLogin";
+import ModalCart from "./../modals/ModalCart";
 
 const Header = () => {
   const {
@@ -16,8 +19,11 @@ const Header = () => {
   const dispatch = useDispatch();
 
   // Authentucacion de usuario
-  function handleAuthentication() {
-    dispatch(openModalContainer());
+  function handleOpenModalAuthentication() {
+    dispatch(openModalLogin());
+  }
+  function handleOpenModalCart() {
+    dispatch(openModalCart());
   }
   return (
     <header className="header">
@@ -29,14 +35,20 @@ const Header = () => {
           />
         </a>
         <div className="header-nav d-flex align-items-center">
-          <button className="btn btn-login me-2" onClick={handleAuthentication}>
+          <button
+            className="btn btn-login me-2"
+            onClick={handleOpenModalAuthentication}
+          >
             Ingresar
           </button>
 
           <div className="shoppingCart">
-            <button className={`btn-cart ${productsInCart > 0 && "bg-orange"}`}>
+            <button
+              className={`btn-cart ${productsInCart.length > 0 && "bg-orange"}`}
+              onClick={handleOpenModalCart}
+            >
               <MdShoppingCart />
-              <span>{productsInCart}</span>
+              <span>{productsInCart.length}</span>
             </button>
           </div>
         </div>
@@ -44,11 +56,10 @@ const Header = () => {
       {/*cinta de apertura*/}
       <Cinta />
       {/*  abrir el modal para authenticar al usuario */}
-      {ui.modalIsOpen && (
-        <ModalContainer>
-          <FormLogin />
-        </ModalContainer>
-      )}
+      {ui.modalLoginIsOpen && <ModalLogin />}
+
+      {/*  abrir el modal para ver el carrito */}
+      {ui.modalCartIsOpen && <ModalCart />}
     </header>
   );
 };

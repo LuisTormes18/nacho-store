@@ -1,14 +1,26 @@
 import { types } from "./../types/types";
 
-export const openModalContainer = () => {
+export const openModalLogin = () => {
   return {
-    type: types.openModal,
+    type: types.openModalLogin,
     payload: null,
   };
 };
-export const closeModalContainer = () => {
+export const closeModalLogin = () => {
   return {
-    type: types.closedModal,
+    type: types.closedModalLogin,
+    payload: null,
+  };
+};
+export const openModalCart = () => {
+  return {
+    type: types.openModalCart,
+    payload: null,
+  };
+};
+export const closeModalCart = () => {
+  return {
+    type: types.closedModalCart,
     payload: null,
   };
 };

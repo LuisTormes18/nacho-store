@@ -1,11 +1,11 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
-import { closeModalContainer } from "./../../stateManagement/actions/ui";
+import { closeModalLogin } from "../../stateManagement/actions/ui";
+import FormLogin from "../auth/FormLogin";
 
-const ModalContainer = ({ children }) => {
-  const { modalIsOpen } = useSelector((state) => state.ui);
+const ModalLogin = ({ children }) => {
+  const { modalLoginIsOpen } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
 
   const customStyles = {
@@ -31,22 +31,20 @@ const ModalContainer = ({ children }) => {
     },
   };
   function closeModal() {
-    dispatch(closeModalContainer());
+    dispatch(closeModalLogin());
   }
-
-  console.log("Se importo el Modal Container...");
 
   return (
     <Modal
-      isOpen={modalIsOpen}
+      isOpen={modalLoginIsOpen}
       onRequestClose={closeModal}
       ariaHideApp={false}
       style={customStyles}
-      contentLabel="Container Modal"
+      contentLabel="Login Modal"
     >
-      {children}
+      <FormLogin />
     </Modal>
   );
 };
 
-export default ModalContainer;
+export default ModalLogin;
