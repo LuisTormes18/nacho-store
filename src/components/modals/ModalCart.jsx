@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { IoIosAdd, IoIosAdd } from "react-icons/io";
+import { IoIosAdd } from "react-icons/io";
 
 import { closeModalCart } from "../../stateManagement/actions/ui";
 import {
