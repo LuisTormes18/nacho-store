@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 import {
   addProdutToCart,
   decrementQuntityOfAProduct,
@@ -7,24 +7,19 @@ import {
 } from "./../../stateManagement/actions/shoppinCart";
 
 const CardProduct = ({ product }) => {
-  const { productsInCart } = useSelector((state) => state.shoppingCart);
+  const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
-  const [conter, setConter] = useState(0);
 
   function handleAddToCart() {
-    setConter(1);
-
-    product.quantity = 1;
-    dispatch(addProdutToCart(product));
+    setQuantity(1);
+    dispatch(addProdutToCart({ ...product, quantity: 1, price: 20 }));
   }
   function handleIncrement() {
-    setConter((conter) => conter + 1);
-
+    setQuantity(quantity + 1);
     dispatch(incrementQuntityOfAProduct(product.id));
   }
-  function hadleDecrement() {
-    setConter((conter) => conter - 1);
-
+  function handleDecrement() {
+    setQuantity(quantity - 1);
     dispatch(decrementQuntityOfAProduct(product.id));
   }
 
@@ -37,7 +32,7 @@ const CardProduct = ({ product }) => {
           <span>Some quick example text to build on the card title</span>
           <span>$20</span>
         </p>
-        {conter < 1 ? (
+        {quantity < 1 ? (
           <button className="btn btn-outline-warning" onClick={handleAddToCart}>
             Agregar
           </button>
@@ -45,11 +40,11 @@ const CardProduct = ({ product }) => {
           <div>
             <button
               className="btn btn-outline-warning"
-              onClick={hadleDecrement}
+              onClick={handleDecrement}
             >
               -
             </button>
-            <span className="m-4">{conter}</span>
+            <span className="m-4">{quantity}</span>
             <button
               className="btn btn-outline-warning"
               onClick={handleIncrement}

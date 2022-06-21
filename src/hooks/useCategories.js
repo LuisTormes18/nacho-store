@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { getPrincipalCategories } from "./../services/api-shop";
+import { getPrincipalCategories, getAllCategories } from "./../services/api-shop";
 
 const useCategories = (limit) => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     getPrincipalCategories().then((resp) => {
+      console.log(resp);
+
       setData(resp);
       setCategories(resp);
     });

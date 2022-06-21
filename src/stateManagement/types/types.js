@@ -9,6 +9,7 @@ export const types = {
   increseQuntityOfAProductInTheCart: "[Cart] increment quantity of a product",
   decreaseQuntityOfAProductInTheCart: "[Cart] decrement quantity of a product",
   removeProductFromCart: "[Cart] remove a product",
+  clearProductsFormCart:"[Cart] Clear all products from cart",
 
   // UI
   openModalLogin: "[UI] Open Modal Login",

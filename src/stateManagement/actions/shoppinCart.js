@@ -24,3 +24,10 @@ export const removeProdutFromCart = (id) => {
     payload: id,
   };
 };
+export const clearCart = () => {
+  return {
+    type: types.clearProductsFormCart,
+    payload: null,
+  };
+};
+  

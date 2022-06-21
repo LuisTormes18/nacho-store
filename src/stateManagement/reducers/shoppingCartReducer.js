@@ -47,6 +47,11 @@ const shoppingCartReducer = (state = initialState, action) => {
           (product) => product.id !== action.payload
         ),
       };
+     case types.clearProductsFormCart: 
+        return {
+        ...state,
+        productsInCart: [],
+      };
     default:
       return state;
   }
