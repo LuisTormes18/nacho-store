@@ -19,7 +19,7 @@ const RowCategory = ({ category }) => {
         <h2 className="pb-4 ">{category.title}</h2>
         <Link className="btn" to={`./${category.id}`}>
           <span>
-            Ver todas <IoIosArrowForward />
+            Ver todos <IoIosArrowForward />
           </span>
         </Link>
       </div>

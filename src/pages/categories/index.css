@@ -27,6 +27,7 @@
 form {
   height: 40px;
   width: 280px;
+  /*width: auto;*/
   border: 1px solid var(--light-gray);
   box-shadow: var(--box-shadow-light);
 
@@ -34,7 +35,9 @@ form {
 }
 form input {
   border: none !important;
+  font-size: 14px !important;
 }
+
 form input:focus {
   outline: none !important;
   border-color: none;

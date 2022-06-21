@@ -21,7 +21,7 @@ const HomePage = () => {
             </span>
           </Link>
         </div>
-        <div className="container d-flex justify-content-start">
+        <div className="container d-flex justify-content-start flex-wrap">
           {categories?.map((c) => (
             <CardCategory key={c.id} category={c} />
           ))}

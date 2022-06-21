@@ -3,6 +3,10 @@
   max-width: 260px;
   margin: 0 10px;
   border-radius: 8px;
+  /*box-shadow: var(--box-shadow-light);*/
+}
+.card-category img {
+  border-radius: 8px 8px 0 0;
 }
 .card-product {
   cursor: pointer;

@@ -39,8 +39,14 @@ export const getAllCategories = async () => {
     },
   ];
 };
-
+export const getCategoryById = async () => {
+  return {
+    id: "0001",
+    title: "Franelas y sueters",
+    url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3025_1630344564.jpg",
+  };
+};
 export const getAllProductsByCategory = async () => {
   const resp = await instanceAxios.get("/photos");
-  return resp.data.slice(0, 4);
+  return resp.data.slice(0, 8);
 };

@@ -43,14 +43,16 @@
 /* Cinta  */
 
 .cinta {
-  height: 42px;
+  min-height: 42px;
+  height: auto;
   background-color: var(--light-gray);
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .cinta p {
-  line-height: 42px;
+  /*line-height: 42px;*/
   color: black;
+  margin-bottom: 0;
 }
 /* Footer  */
 
