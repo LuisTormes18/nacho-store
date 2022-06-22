@@ -1,26 +1,24 @@
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import {
-  addProdutToCart,
-  decrementQuntityOfAProduct,
-  incrementQuntityOfAProduct,
-} from "./../../stateManagement/actions/shoppinCart";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { addProdutToCart } from "./../../stateManagement/actions/shoppinCart";
+import ButtonsChangeQuantity from "./ButtonsQuantity/ButtonsChangeQuantity";
+import { isProductInCart } from "../../utils/utils";
 
 const CardProduct = ({ product }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [InCart, setInCart] = useState(false);
+  const { productsInCart } = useSelector((state) => state.shoppingCart);
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (isProductInCart(product.id, productsInCart)) {
+      setInCart(true);
+    }else{
+      setInCart(false)
+    }
+  }, [product, productsInCart]);
 
   function handleAddToCart() {
-    setQuantity(1);
+    setInCart(true);
     dispatch(addProdutToCart({ ...product, quantity: 1, price: 20 }));
-  }
-  function handleIncrement() {
-    setQuantity(quantity + 1);
-    dispatch(incrementQuntityOfAProduct(product.id));
-  }
-  function handleDecrement() {
-    setQuantity(quantity - 1);
-    dispatch(decrementQuntityOfAProduct(product.id));
   }
 
   return (
@@ -32,26 +30,12 @@ const CardProduct = ({ product }) => {
           <span>Some quick example text to build on the card title</span>
           <span>$20</span>
         </p>
-        {quantity < 1 ? (
+        {!InCart ? (
           <button className="btn btn-outline-warning" onClick={handleAddToCart}>
             Agregar
           </button>
         ) : (
-          <div>
-            <button
-              className="btn btn-outline-warning"
-              onClick={handleDecrement}
-            >
-              -
-            </button>
-            <span className="m-4">{quantity}</span>
-            <button
-              className="btn btn-outline-warning"
-              onClick={handleIncrement}
-            >
-              +
-            </button>
-          </div>
+          <ButtonsChangeQuantity id={product.id} />
         )}
       </div>
     </div>
