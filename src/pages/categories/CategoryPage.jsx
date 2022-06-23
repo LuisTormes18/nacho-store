@@ -18,7 +18,7 @@ const CategoryPage = ({}) => {
     return <div>Error</div>;
   }
   return (
-    <div className="container mt-4 p-4">
+    <div className="container mt-4 p-4 pb-5">
       <header>
         <h2 className="pb-4 ">{category?.title}</h2>
 

@@ -12,6 +12,8 @@ export const types = {
   decreaseQuntityOfAProductInTheCart: "[Cart] decrement quantity of a product",
   removeProductFromCart: "[Cart] remove a product",
   clearProductsFormCart: "[Cart] Clear all products from cart",
+  openModalCart: "[UI] Open modal from cart",
+  closedModalCart: "[UI] closed modal from cart",
 
   // UI
   showCinta: "[UI] Open Cinta",

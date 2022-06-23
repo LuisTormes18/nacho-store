@@ -53,5 +53,10 @@ export const getAllProductsByCategory = async () => {
       title: "Accesorios para celulares",
       url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3029_1630344580.jpg",
     },
+    {
+      id: "0004",
+      title: "Accesorios para celulares",
+      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3029_1630344580.jpg",
+    },
   ];
 };

@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { closeModalCart } from "../../stateManagement/actions/shoppinCart";
 
 import Cart from "../Cart/Cart";
+import "./modals.css";
 
 const ModalCart = () => {
   const { productsInCart, modalCartIsOpen } = useSelector(
@@ -26,12 +27,13 @@ const ModalCart = () => {
     content: {
       top: "80px",
       left: "auto",
-      right: "10%",
-      height: "450px",
+      right: "5%",
       padding: "0px",
       backgroundColor: "#FFF",
       border: "none",
+      borderRadius: "8px",
       width: "340px",
+      height: "450px",
     },
   };
 

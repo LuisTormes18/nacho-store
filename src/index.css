@@ -28,9 +28,9 @@
   box-sizing: border-box !important;
 }
 main {
-  margin: 0 auto;
+  /* margin: 0 auto;
   max-width: 1400px;
-  min-height: 100vh;
+  min-height: 100vh; */
   /*background-color: #f7f7f7;*/
 }
 /*.navbar-collapse {

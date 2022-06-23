@@ -8,7 +8,7 @@ import "./index.css";
 const CategoriesPage = () => {
   const [categories, filters, filterCategories] = useCategories();
   return (
-    <div>
+    <div className="pb-5">
       <div className="categories-nav container d-flex justify-content-between align-items-start">
         <ul className="categories-nav-filters d-flex justify-content-start flex-wrap">
           <li

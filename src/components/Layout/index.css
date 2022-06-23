@@ -8,6 +8,8 @@
   width: 100%;
   padding-bottom: 0;
   z-index: 4000;
+  border-bottom: 1px solid var(--light-gray);
+  box-shadow: 0 0 6px 0 rgb(163 171 193 / 16%);;
 }
 .logo {
   width: 174px;
@@ -63,4 +65,9 @@
 .footer a {
   text-decoration: none;
   margin: 7px;
+}
+.content{
+  margin: 0 auto;
+  max-width: 1400px;
+  min-height: 100vh;
 }
