@@ -6,9 +6,11 @@ import { closeModalCart } from "../../stateManagement/actions/ui";
 import Cart from "../Cart/Cart";
 
 const ModalCart = () => {
-  const { ui, shoppingCart } = useSelector((state) => state);
-  const { modalCartIsOpen } = ui;
-  const { productsInCart } = shoppingCart;
+  const { productsInCart, modalCartIsOpen } = useSelector(
+    (state) => state.shoppingCart
+  );
+  // const { modalCartIsOpen } = ui;
+  // const { productsInCart, modalCartIsOpen } = shoppingCart;
   const dispatch = useDispatch();
 
   const customStyles = {

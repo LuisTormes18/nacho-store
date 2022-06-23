@@ -11,6 +11,7 @@ import { types } from "./../types/types";
 // ]
 const initialState = {
   productsInCart: [],
+  modalCartIsOpen: false,
 };
 
 const shoppingCartReducer = (state = initialState, action) => {
@@ -47,10 +48,20 @@ const shoppingCartReducer = (state = initialState, action) => {
           (product) => product.id !== action.payload
         ),
       };
-     case types.clearProductsFormCart: 
-        return {
+    case types.clearProductsFormCart:
+      return {
         ...state,
         productsInCart: [],
+      };
+    case types.openModalCart:
+      return {
+        ...state,
+        modalCartIsOpen: true,
+      };
+    case types.closedModalCart:
+      return {
+        ...state,
+        modalCartIsOpen: false,
       };
     default:
       return state;

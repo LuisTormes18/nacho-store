@@ -4,15 +4,14 @@ import { MdShoppingCart } from "react-icons/md";
 import Cinta from "./Cinta";
 
 import "./index.css";
-import { openModalCart } from "./../../stateManagement/actions/ui";
+import { openModalCart } from "./../../stateManagement/actions/shoppinCart";
 import { openModalLogin } from "./../../stateManagement/actions/auth";
 import ModalLogin from "./../modals/ModalLogin";
 import ModalCart from "./../modals/ModalCart";
 
 const Header = () => {
   const {
-    shoppingCart: { productsInCart },
-    ui,
+    shoppingCart: { productsInCart, modalCartIsOpen },
     auth,
   } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -62,7 +61,7 @@ const Header = () => {
       {auth.modalLoginIsOpen && <ModalLogin />}
 
       {/*  abrir el modal para ver el carrito */}
-      {ui.modalCartIsOpen && <ModalCart />}
+      {modalCartIsOpen && <ModalCart />}
     </header>
   );
 };
