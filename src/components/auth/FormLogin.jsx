@@ -1,23 +1,42 @@
+import { useDispatch } from "react-redux";
+import useForm from "./../../hooks/useForm";
+import { startLoginWhitEmailAndCode } from "./../../stateManagement/actions/auth";
+import "./auth.css";
+
 const FormLogin = () => {
+  const dispatch = useDispatch();
+  const [state, hanleInputChange] = useForm({ email: "" });
+  const { email } = state;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(state)
+    dispatch(startLoginWhitEmailAndCode(state));
+  }
+
   return (
-    <div>
-      <form className="form ">
-        <h2 className="text-center"> Ingresa tu cuenta </h2>
+    <form className="from form-login" onSubmit={handleSubmit}>
+      <h3 className="text-center"> Ingresa tu cuenta </h3>
 
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="email"
-            name="email"
-            placeholder="youremail@gmil.com"
-          />
-        </div>
+      <div className="form-group mb-5 mt-5">
+        <input
+          className="form-control"
+          onChange={hanleInputChange}
+          type="email"
+          name="email"
+          value={email}
+          placeholder="youremail@gmil.com"
+        />
+      </div>
 
-        <div className="form-group">
-          <button className="btn btn-warning">Continuar</button>
-        </div>
-      </form>
-    </div>
+      <div className="form-group mb-5">
+        <input
+          type="submit"
+          className="btn btn-warning w-100"
+          value="Continuar"
+        />
+      </div>
+    </form>
   );
 };
 

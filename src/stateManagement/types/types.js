@@ -2,6 +2,8 @@ export const types = {
   // Auth
   initLogin: "[Auth] Init Login",
   finishLogin: "[Auth] User Authenticated",
+  openModalLogin: "[UI] Open Modal Login",
+  closedModalLogin: "[UI] closed Modal Login",
   logout: "[Auth] Logout",
 
   // Cart
@@ -9,11 +11,9 @@ export const types = {
   increseQuntityOfAProductInTheCart: "[Cart] increment quantity of a product",
   decreaseQuntityOfAProductInTheCart: "[Cart] decrement quantity of a product",
   removeProductFromCart: "[Cart] remove a product",
-  clearProductsFormCart:"[Cart] Clear all products from cart",
+  clearProductsFormCart: "[Cart] Clear all products from cart",
 
   // UI
-  openModalLogin: "[UI] Open Modal Login",
-  closedModalLogin: "[UI] closed Modal Login",
   openModalCart: "[UI] Open Modal Cart",
   closedModalCart: "[UI] closed Modal Cart",
 };

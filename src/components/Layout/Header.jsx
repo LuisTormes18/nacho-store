@@ -4,10 +4,8 @@ import { MdShoppingCart } from "react-icons/md";
 import Cinta from "./Cinta";
 
 import "./index.css";
-import {
-  openModalLogin,
-  openModalCart,
-} from "./../../stateManagement/actions/ui";
+import { openModalCart } from "./../../stateManagement/actions/ui";
+import { openModalLogin } from "./../../stateManagement/actions/auth";
 import ModalLogin from "./../modals/ModalLogin";
 import ModalCart from "./../modals/ModalCart";
 
@@ -15,6 +13,7 @@ const Header = () => {
   const {
     shoppingCart: { productsInCart },
     ui,
+    auth,
   } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -35,12 +34,16 @@ const Header = () => {
           />
         </a>
         <div className="header-nav d-flex align-items-center">
-          <button
-            className="btn btn-login me-2"
-            onClick={handleOpenModalAuthentication}
-          >
-            Ingresar
-          </button>
+          {!auth.user ? (
+            <button
+              className="btn btn-login me-2"
+              onClick={handleOpenModalAuthentication}
+            >
+              Ingresar
+            </button>
+          ) : (
+            <span>{auth.user.name}</span>
+          )}
 
           <div className="shoppingCart">
             <button
@@ -56,7 +59,7 @@ const Header = () => {
       {/*cinta de apertura*/}
       <Cinta />
       {/*  abrir el modal para authenticar al usuario */}
-      {ui.modalLoginIsOpen && <ModalLogin />}
+      {auth.modalLoginIsOpen && <ModalLogin />}
 
       {/*  abrir el modal para ver el carrito */}
       {ui.modalCartIsOpen && <ModalCart />}

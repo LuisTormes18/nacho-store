@@ -35,7 +35,7 @@ const CategoriesPage = () => {
             </li>
           ))}
         </ul>
-        <form className="d-flex align-items-center p-1">
+        <form className="form-search d-flex align-items-center p-1">
           <IoIosSearch size="24" />
           <input
             className="form-control me-2"

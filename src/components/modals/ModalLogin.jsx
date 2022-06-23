@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
-import { closeModalLogin } from "../../stateManagement/actions/ui";
+import { closeModalLogin } from "../../stateManagement/actions/auth";
 import FormLogin from "../auth/FormLogin";
 
 const ModalLogin = ({ children }) => {
-  const { modalLoginIsOpen } = useSelector((state) => state.ui);
+  const { modalLoginIsOpen } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const customStyles = {
@@ -27,13 +27,14 @@ const ModalLogin = ({ children }) => {
       padding: "10px",
       backgroundColor: "#FFF",
       border: "none",
-      width: "80%",
+      width: "400px",
+      // height: "auto",
+      minHeight: "250px",
     },
   };
   function closeModal() {
     dispatch(closeModalLogin());
   }
-
   return (
     <Modal
       isOpen={modalLoginIsOpen}

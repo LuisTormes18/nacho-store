@@ -24,7 +24,7 @@
   text-decoration: none;
   color: black;
 }
-form {
+.form-search {
   height: 40px;
   width: 280px;
   /*width: auto;*/
@@ -33,12 +33,12 @@ form {
 
   border-radius: 8px;
 }
-form input {
+.form-search input {
   border: none !important;
   font-size: 14px !important;
 }
 
-form input:focus {
+.form-search input:focus {
   outline: none !important;
   border-color: none;
   /*outline: red;*/

@@ -1,12 +1,24 @@
 import { types } from "./../types/types";
-export const authReducer = (state = {}, action) => {
+const initialSate = {
+  user: null,
+  modalLoginIsOpen: false,
+};
+export const authReducer = (state = initialSate, action) => {
   switch (action.type) {
-    case types.login:
+    case types.openModalLogin:
+      return { ...state, modalLoginIsOpen: true };
+    case types.finishLogin:
       return {
-        uid: action.payload.uid,
-        name: action.payload.name,
+        ...state,
+        user: { uid: action.payload.uid, name: action.payload.name },
+        modalLoginIsOpen: false,
       };
 
+    case types.closedModalLogin:
+      return {
+        ...state,
+        modalLoginIsOpen: false,
+      };
     case types.logout:
       return {};
 
