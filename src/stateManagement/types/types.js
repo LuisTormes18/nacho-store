@@ -14,6 +14,6 @@ export const types = {
   clearProductsFormCart: "[Cart] Clear all products from cart",
 
   // UI
-  openModalCart: "[UI] Open Modal Cart",
-  closedModalCart: "[UI] closed Modal Cart",
+  showCinta: "[UI] Open Cinta",
+  hiddenCinta: "[UI] closed Cinta",
 };

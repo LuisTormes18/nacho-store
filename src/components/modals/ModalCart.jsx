@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
-import { closeModalCart } from "../../stateManagement/actions/ui";
+import { closeModalCart } from "../../stateManagement/actions/shoppinCart";
 
 import Cart from "../Cart/Cart";
 

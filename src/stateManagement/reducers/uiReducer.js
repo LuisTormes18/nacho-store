@@ -1,30 +1,19 @@
 import { types } from "./../types/types";
 
 const initialState = {
-  modalLoginIsOpen: false,
-  modalCartIsOpen: false,
+  isVisibilityCinta: null,
 };
 export const uiReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.openModalLogin:
+    case types.showCinta:
       return {
         ...state,
-        modalLoginIsOpen: true,
+        isVisibilityCinta: true,
       };
-    case types.closedModalLogin:
+    case types.hiddenCinta:
       return {
         ...state,
-        modalLoginIsOpen: false,
-      };
-    case types.openModalCart:
-      return {
-        ...state,
-        modalCartIsOpen: true,
-      };
-    case types.closedModalCart:
-      return {
-        ...state,
-        modalCartIsOpen: false,
+        isVisibilityCinta: false,
       };
     default:
       return initialState;

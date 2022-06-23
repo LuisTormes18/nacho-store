@@ -12,7 +12,7 @@ import ModalCart from "./../modals/ModalCart";
 const Header = () => {
   const {
     shoppingCart: { productsInCart, modalCartIsOpen },
-    auth,
+    auth: { user, modalLoginIsOpen },
   } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ const Header = () => {
           />
         </a>
         <div className="header-nav d-flex align-items-center">
-          {!auth.user ? (
+          {!user ? (
             <button
               className="btn btn-login me-2"
               onClick={handleOpenModalAuthentication}
@@ -41,7 +41,7 @@ const Header = () => {
               Ingresar
             </button>
           ) : (
-            <span>{auth.user.name}</span>
+            <span>{user.name}</span>
           )}
 
           <div className="shoppingCart">
@@ -58,7 +58,7 @@ const Header = () => {
       {/*cinta de apertura*/}
       <Cinta />
       {/*  abrir el modal para authenticar al usuario */}
-      {auth.modalLoginIsOpen && <ModalLogin />}
+      {modalLoginIsOpen && <ModalLogin />}
 
       {/*  abrir el modal para ver el carrito */}
       {modalCartIsOpen && <ModalCart />}

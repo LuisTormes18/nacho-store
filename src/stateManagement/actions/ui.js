@@ -1,14 +1,14 @@
 import { types } from "./../types/types";
 
-export const openModalCart = () => {
+export const closedCinta = () => {
   return {
-    type: types.openModalCart,
+    type: types.hiddenCinta,
     payload: null,
   };
 };
-export const closeModalCart = () => {
+export const openCinta = () => {
   return {
-    type: types.closedModalCart,
+    type: types.showCinta,
     payload: null,
   };
 };

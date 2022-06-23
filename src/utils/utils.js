@@ -14,3 +14,8 @@ export function getTotalCartValue(products) {
 export function isProductInCart(id, productsInCart) {
   return productsInCart.map((p) => p.id).includes(id);
 }
+export function getCurrentTime() {
+  let date = new Date();
+  console.log(date);
+  return `${date.getHours()}`;
+}
