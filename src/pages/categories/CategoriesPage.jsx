@@ -9,8 +9,8 @@ const CategoriesPage = () => {
   const [categories, filters, filterCategories] = useCategories();
   return (
     <div className="pb-5">
-      <div className="categories-nav container d-flex justify-content-between align-items-start">
-        <ul className="categories-nav-filters d-flex justify-content-start flex-wrap">
+      <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
+        <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
           <li
             className="item"
             onClick={() => {
@@ -35,7 +35,7 @@ const CategoriesPage = () => {
             </li>
           ))}
         </ul>
-        <form className="form-search d-flex align-items-center p-1">
+        <form className="form-search d-flex align-items-center mb-4 mb-sm-0 p-1">
           <IoIosSearch size="24" />
           <input
             className="form-control me-2"

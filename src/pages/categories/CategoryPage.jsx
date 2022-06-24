@@ -36,7 +36,7 @@ const CategoryPage = ({}) => {
           </form>
         </div>
       </header>
-      <div className="d-flex flex-wrap justify-content-between pt-3">
+      <div className="d-flex flex-wrap justify-content-center justify-content-md-between pt-3">
         {products?.map((p) => (
           <CardProduct key={p.id} product={p} />
         ))}

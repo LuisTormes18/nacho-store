@@ -28,7 +28,7 @@ const Header = () => {
       <div className="container mt-2 mb-2 d-flex justify-content-between align-items-center">
         <a href="/">
           <img
-            className="logo"
+            className="logo img-fluid"
             src="https://shopsqa.lukapay.io/static/nachoLogoG-144ac61f9c3fe85097f152cd0e0128c9.jpg"
           />
         </a>
