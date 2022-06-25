@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LayoutContainer } from "./components";
 import { HomePage, CategoriesPage, CategoryPage, ProfilePage } from "./pages";
-// import { getProductsInCartFromLocalStorage } from "./stateManagement/actions/shoppinCart";
+import { updateLocalStorage } from "./utils/utils";
 
 const App = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getProductsInCartFromLocalStorage());
-  // }, []);
+  const { productsInCart } = useSelector(state => state.shoppingCart)
+  useEffect(() => {
+    updateLocalStorage(productsInCart)
+  }, [productsInCart]);
   
 
   return (

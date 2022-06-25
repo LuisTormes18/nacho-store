@@ -20,7 +20,18 @@ export function getCurrentTime() {
   return `${date.getHours()}`;
 }
 export const getProductsInCartFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem("productsInCart") ) || [];
+  try{
+  const currentData = JSON.parse(localStorage.getItem("productsInCart")) || []
+  console.log(currentData)
+ 
+  return currentData;
+
+}catch{
+
+  return []
+
+
+}
   
 };
 export const updateLocalStorage = (productsInCart) => {
