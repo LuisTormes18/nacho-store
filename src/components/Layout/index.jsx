@@ -3,11 +3,11 @@ import Footer from "./Footer";
 import Cinta from "./Cinta";
 import WhatsApp from "./whatsApp/WhatsApp";
 
-export { Header, Footer, Cinta };
+import "./index.css";
 
 const LayoutContainer = ({ children }) => {
   return (
-    <div>
+    <div className="layout">
       <WhatsApp />
       <Header />
       <div className="content">{children}</div>

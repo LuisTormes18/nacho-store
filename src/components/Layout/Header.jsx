@@ -26,7 +26,7 @@ const Header = () => {
   }
   return (
     <header className="header">
-      <div className="container mt-2 mb-2 d-flex justify-content-between align-items-center">
+      <div className="container p-2 d-flex justify-content-between align-items-center">
         <Link to="/">
           <img
             className="logo img-fluid"
