@@ -5,16 +5,15 @@ import {
   incrementQuntityOfAProduct,
 } from "./../../../stateManagement/actions/shoppinCart";
 
-const ButtonsChangeQuantity = ({id}) => {
+const ButtonsChangeQuantity = ({ id }) => {
   const { productsInCart } = useSelector((state) => state.shoppingCart);
   const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const product = productsInCart.find((p) => p.id === id);
-    if(product){
-    setQuantity(product.quantity);
-          
+    if (product) {
+      setQuantity(product.quantity);
     }
   }, [id, productsInCart]);
 

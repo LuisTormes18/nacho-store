@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { getPrincipalCategories, getAllCategories } from "./../services/api-shop";
+import {
+  getPrincipalCategories,
+  getAllCategories,
+} from "./../services/api-shop";
 
 const useCategories = (limit) => {
   const [data, setData] = useState([]);

@@ -42,3 +42,12 @@ export const closeModalCart = () => {
     payload: null,
   };
 };
+
+// export const getProductsInCartFromLocalStorage = () => {
+//   const productsInCart = JSON.parse(localStorage.getItem("productsInCart") ) || [];
+//   return {
+//     type: types.loadProductsInCartFromLocalStorage,
+//     payload: productsInCart,
+//   };
+// };
+

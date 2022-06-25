@@ -11,8 +11,8 @@ const CardProduct = ({ product }) => {
   useEffect(() => {
     if (isProductInCart(product.id, productsInCart)) {
       setInCart(true);
-    }else{
-      setInCart(false)
+    } else {
+      setInCart(false);
     }
   }, [product, productsInCart]);
 

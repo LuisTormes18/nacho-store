@@ -8,7 +8,7 @@ import {
 
 const useCart = () => {
   const dispatch = useDispatch();
-
+ 
   function handleIncrement(id) {
     dispatch(incrementQuntityOfAProduct(id));
   }

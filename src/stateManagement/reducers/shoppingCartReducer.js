@@ -1,3 +1,4 @@
+import { getProductsInCartFromLocalStorage } from "./../../utils/utils";
 import { types } from "./../types/types";
 
 // "products": [
@@ -10,12 +11,17 @@ import { types } from "./../types/types";
 //     }
 // ]
 const initialState = {
-  productsInCart: [],
+  productsInCart: getProductsInCartFromLocalStorage(),
   modalCartIsOpen: false,
 };
 
 const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.loadProductsInCartFromLocalStorage:
+      return {
+        ...state,
+        productsInCart: action.payload,
+      };
     case types.addProductToCart:
       return {
         ...state,

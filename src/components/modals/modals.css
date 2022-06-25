@@ -1,9 +1,9 @@
-.ReactModal__Overlay{
-    margin: 0 auto;
+.ReactModal__Overlay {
+  margin: 0 auto;
   max-width: 1400px;
   min-height: 100vh;
   padding: 0;
 }
-.ReactModal__Content{
-    /* right: 10% !important; */
+.ReactModal__Content {
+  /* right: 10% !important; */
 }
