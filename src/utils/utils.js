@@ -20,20 +20,29 @@ export function getCurrentTime() {
   return `${date.getHours()}`;
 }
 export const getProductsInCartFromLocalStorage = () => {
-  try{
-  const currentData = JSON.parse(localStorage.getItem("productsInCart")) || []
-  console.log(currentData)
- 
-  return currentData;
+  try {
+    const currentData =
+      JSON.parse(localStorage.getItem("productsInCart")) || [];
+    console.log(currentData);
 
-}catch{
-
-  return []
-
-
-}
-  
+    return currentData;
+  } catch {
+    return [];
+  }
 };
 export const updateLocalStorage = (productsInCart) => {
-   localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
-}
+  localStorage.setItem("productsInCart", JSON.stringify(productsInCart));
+};
+
+export const getUserFromLocalStorage = () => {
+  try {
+    const user = JSON.parse(localStorage.getItem("user")) || null;
+
+    return user;
+  } catch {
+    return null;
+  }
+};
+export const setUserLocalStorage = (user) => {
+  localStorage.setItem("user", JSON.stringify(user));
+};

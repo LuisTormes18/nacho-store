@@ -1,6 +1,7 @@
+import { getUserFromLocalStorage } from "./../../utils/utils";
 import { types } from "./../types/types";
 const initialSate = {
-  user: null,
+  user: getUserFromLocalStorage(),
   modalLoginIsOpen: false,
 };
 export const authReducer = (state = initialSate, action) => {
@@ -20,7 +21,7 @@ export const authReducer = (state = initialSate, action) => {
         modalLoginIsOpen: false,
       };
     case types.logout:
-      return {};
+      return { ...state, user: null };
 
     default:
       return state;

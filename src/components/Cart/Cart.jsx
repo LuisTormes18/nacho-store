@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import useCart from "./../../hooks/useCart";
 import { getTotalCartValue } from "./../../utils/utils";
@@ -34,7 +35,9 @@ const Cart = () => {
           </span>
         </div>
         <hr />
-        <button className="btn btn-warning m-3">Continuar compra</button>
+        <Link className="btn btn-warning m-3" to={`./cart`}>
+          Continuar compra
+        </Link>
         <button
           className="btn btn-clear-cart m-5 mt-0"
           onClick={handleClearCart}

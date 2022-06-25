@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
 
 import Cinta from "./Cinta";
@@ -26,12 +27,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container mt-2 mb-2 d-flex justify-content-between align-items-center">
-        <a href="/">
+        <Link to="/">
           <img
             className="logo img-fluid"
             src="https://shopsqa.lukapay.io/static/nachoLogoG-144ac61f9c3fe85097f152cd0e0128c9.jpg"
           />
-        </a>
+        </Link>
         <div className="header-nav d-flex align-items-center">
           {!user ? (
             <button
@@ -41,7 +42,9 @@ const Header = () => {
               Ingresar
             </button>
           ) : (
-            <span>{user.name}</span>
+            <Link className="btn " to={`./profile`}>
+              {user?.name}
+            </Link>
           )}
 
           <div className="shoppingCart">

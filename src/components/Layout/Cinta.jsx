@@ -11,7 +11,7 @@ const Cinta = () => {
 
   useEffect(() => {
     let time = getCurrentTime();
-    if (parseInt(time) >= 11 && parseInt(time) <= 17) {
+    if (parseInt(time) >= 10 && parseInt(time) <= 17) {
       dispatch(closedCinta());
       return;
     }

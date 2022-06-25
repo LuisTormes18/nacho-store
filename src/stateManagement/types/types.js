@@ -4,7 +4,7 @@ export const types = {
   finishLogin: "[Auth] User Authenticated",
   openModalLogin: "[UI] Open Modal Login",
   closedModalLogin: "[UI] closed Modal Login",
-  logout: "[Auth] Logout",
+  logout: "[Auth] User Logout",
 
   // Cart
   addProductToCart: "[Cart] Add new product",
