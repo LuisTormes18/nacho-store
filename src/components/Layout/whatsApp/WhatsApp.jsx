@@ -5,7 +5,7 @@ const WhatsApp = () => {
   return (
     <div className="wa">
       <div className="wa__icon">
-        <SiWhatsapp size="50" color="#F1F1F1" />
+        <SiWhatsapp size="30" color="#F1F1F1" />
       </div>
     </div>
   );

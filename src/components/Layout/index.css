@@ -71,10 +71,11 @@
 .content {
   margin: 0 auto;
   max-width: 1400px;
-  /*min-height: 100vh;*/
+  padding-bottom: 60px;
 }
 .layout {
   position: relative;
   min-height: 100vh;
   /*background-color: red;*/
 }
+/*#f20f20f9*/

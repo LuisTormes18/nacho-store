@@ -43,7 +43,7 @@ const HomePage = () => {
             />
           </div>
 
-          <div className="col-12 col-md-6 p-3 p-md-0">
+          <div className="col-12 col-md-6 p-3 pt-md-0">
             <h2>Nacho Shop</h2>
             <h4>Abrimos nuestra tienda fisica!</h4>
             <p>
