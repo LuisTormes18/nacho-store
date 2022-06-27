@@ -1,6 +1,16 @@
 import React from "react";
+import useForm from "./../../../../hooks/useForm";
 
 const FormEncomienda = () => {
+  const [state, handleInputChange] = useForm({
+    direccion: "",
+    descripcion: "",
+    zipcode: "",
+    ciudad: "",
+    stado: "",
+    ref: "",
+  });
+  const { direccion, descipcion, zipcode, ciudad, stado, ref } = state;
   return (
     <div>
       <form className="row g-3 p-0">
@@ -8,7 +18,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputEmail4"
+            id="descripcion"
+            name="descripcion"
+            value={descipcion}
+            onChange={handleInputChange}
             placeholder="Descripcion"
           />
         </div>
@@ -23,7 +36,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputEmail4"
+            id="direccion"
+            name="direccion"
+            value={direccion}
+            onChange={handleInputChange}
             placeholder="Direccion"
           />
         </div>
@@ -31,7 +47,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputAddress2"
+            id="ciudad"
+            name="ciudad"
+            value={ciudad}
+            onChange={handleInputChange}
             placeholder="Ciudad"
           />
         </div>
@@ -39,7 +58,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputAddress2"
+            id="stado"
+            name="stado"
+            value={stado}
+            onChange={handleInputChange}
             placeholder="Estado"
           />
         </div>
@@ -48,7 +70,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputAddress2"
+            id="zipcode"
+            name="zipcode"
+            value={zipcode}
+            onChange={handleInputChange}
             placeholder="Zip Code"
           />
         </div>
@@ -56,7 +81,10 @@ const FormEncomienda = () => {
           <input
             type="text"
             className="form-control"
-            id="inputAddress2"
+            id="ref"
+            name="ref"
+            value={ref}
+            onChange={handleInputChange}
             placeholder="Referencia (opcional)"
           />
         </div>

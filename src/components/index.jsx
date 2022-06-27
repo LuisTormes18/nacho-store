@@ -5,9 +5,6 @@ import Cart from "./Cart/Cart";
 import CartListProducts from "./Cart/CartListProducts";
 import LayoutContainer from "./Layout";
 import TotalCartValue from "./Cart/TotalCartValue";
-import NavTabDeliveryType from "./Tabs/NavTabDeliveryType";
-import NavTabPayment from "./Tabs/NavTabPayment";
-import FormLogin from "./auth/FormLogin";
 
 export {
   CardCategory,
@@ -17,7 +14,4 @@ export {
   CartListProducts,
   LayoutContainer,
   TotalCartValue,
-  NavTabDeliveryType,
-  NavTabPayment,
-  FormLogin,
 };

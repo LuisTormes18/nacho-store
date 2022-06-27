@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import {
-  CartListProducts,
-  TotalCartValue,
+  FormDatosClient,
   NavTabDeliveryType,
   NavTabPayment,
-  FormLogin,
-} from "./../../components";
+  Resumen,
+} from "./components";
+
 import "./style.css";
 
 const RealizarPagoPage = () => {
@@ -27,8 +27,7 @@ const RealizarPagoPage = () => {
               <IoIosArrowBack />
             </button>
             <h3>Tus datos</h3>
-            {/*si el usuario no esta athenticado*/}
-            <FormLogin />
+            <FormDatosClient />
           </div>
 
           <div className="col-12">
@@ -41,16 +40,10 @@ const RealizarPagoPage = () => {
         </div>
         <div className="right row col-6">
           <div className="col-12">
-            <div className="products-container">
-              <h3>Resumen</h3>
-              <CartListProducts />
-              <TotalCartValue />
-            </div>
+            <Resumen />
           </div>
           <div className="col-12">
-            <div className="metodo-container">
-              <NavTabPayment />
-            </div>
+            <NavTabPayment />
           </div>
         </div>
       </div>
