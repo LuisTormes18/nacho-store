@@ -43,6 +43,8 @@ const ModalLogin = ({ children }) => {
       style={customStyles}
       contentLabel="Login Modal"
     >
+      <h3 className="text-center pt-4"> Ingresa tu cuenta </h3>
+
       <FormLogin />
     </Modal>
   );

@@ -1,0 +1,22 @@
+.tab-button {
+  width: 210px;
+  height: 80px;
+  color: #6f706f;
+  border: 1px solid #bebebe !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-bottom: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.tab-button:focus {
+  color: orange;
+}
+.nav-pills .nav-link.active {
+  color: var(--orange);
+  background-color: #fff;
+}
+.nav-pills .nav-link {
+  color: var(--dark-gray);
+}

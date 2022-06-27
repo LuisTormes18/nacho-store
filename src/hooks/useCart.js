@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   decrementQuntityOfAProduct,
   incrementQuntityOfAProduct,
@@ -7,6 +7,7 @@ import {
 } from "./../stateManagement/actions/shoppinCart";
 
 const useCart = () => {
+  const { productsInCart } = useSelector((state) => state.shoppingCart);
   const dispatch = useDispatch();
 
   function handleIncrement(id) {
@@ -22,6 +23,7 @@ const useCart = () => {
     dispatch(removeProdutFromCart(id));
   }
   return {
+    productsInCart,
     handleIncrement,
     handleDecrement,
     handleClearCart,

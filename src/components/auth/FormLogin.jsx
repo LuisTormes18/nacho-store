@@ -15,8 +15,6 @@ const FormLogin = () => {
 
   return (
     <form className="from form-login" onSubmit={handleSubmit}>
-      <h3 className="text-center"> Ingresa tu cuenta </h3>
-
       <div className="form-group mb-5 mt-5">
         <input
           className="form-control"

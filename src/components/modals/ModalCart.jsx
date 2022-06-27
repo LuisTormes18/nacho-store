@@ -10,8 +10,7 @@ const ModalCart = () => {
   const { productsInCart, modalCartIsOpen } = useSelector(
     (state) => state.shoppingCart
   );
-  // const { modalCartIsOpen } = ui;
-  // const { productsInCart, modalCartIsOpen } = shoppingCart;
+
   const dispatch = useDispatch();
 
   const customStyles = {

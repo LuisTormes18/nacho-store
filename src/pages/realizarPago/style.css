@@ -1,0 +1,19 @@
+.cart-page {
+  padding: 60px 0px;
+}
+.products-container {
+  box-shadow: 0 0 10px rgb(139 158 167 / 16%);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 25px;
+  padding: 20px;
+}
+.metodo-container {
+  box-shadow: 0 0 10px rgb(139 158 167 / 16%);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 25px;
+  padding: 20px;
+}

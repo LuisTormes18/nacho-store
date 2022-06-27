@@ -1,39 +1,29 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem";
 import useCart from "./../../hooks/useCart";
-import { getTotalCartValue } from "./../../utils/utils";
+import CartListProducts from "./CartListProducts";
 
 import "./cart.css";
+import TotalCartValue from "./TotalCartValue";
 
-const Cart = () => {
+const Cart = ({}) => {
   const { productsInCart } = useSelector((state) => state.shoppingCart);
-  const { handleClearCart, handleIncrement, handleDecrement, handleDelete } =
-    useCart();
+  const { handleClearCart } = useCart();
+
   return (
     <div className="h-100 cart">
       <header className="p-3 pb-0">
         <h4 className="text-bold">Tienes {productsInCart.length} producto</h4>
       </header>
       <hr />
-      <div className="p-2 cart__body">
-        {productsInCart.map((product) => (
-          <CartItem
-            key={product.id}
-            product={product}
-            handleIncrement={handleIncrement}
-            handleDecrement={handleDecrement}
-            handleDelete={handleDelete}
-          />
-        ))}
-      </div>
+      {/*Lista de productos en el carrito*/}
+
+      <CartListProducts />
+
+      {/* footer */}
+
       <footer className="d-flex flex-column">
-        <div className="d-flex justify-content-between p-3 pb-0">
-          <span className="text-bold">SubTotal</span>
-          <span className="text-bold">
-            {getTotalCartValue(productsInCart)}$
-          </span>
-        </div>
+        <TotalCartValue text="SubTotal" />
         <hr />
         <Link className="btn btn-warning m-3" to={`./cart`}>
           Continuar compra
