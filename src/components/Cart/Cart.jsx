@@ -1,14 +1,12 @@
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useCart from "./../../hooks/useCart";
 import CartListProducts from "./CartListProducts";
-
-import "./cart.css";
 import TotalCartValue from "./TotalCartValue";
 
+import "./cart.css";
+
 const Cart = ({}) => {
-  const { productsInCart } = useSelector((state) => state.shoppingCart);
-  const { handleClearCart } = useCart();
+  const { productsInCart, handleClearCart } = useCart();
 
   return (
     <div className="h-100 cart">
@@ -25,7 +23,7 @@ const Cart = ({}) => {
       <footer className="d-flex flex-column">
         <TotalCartValue text="SubTotal" />
         <hr />
-        <Link className="btn btn-warning m-3" to={`./cart`}>
+        <Link className="btn btn-warning m-3" to={`./realizarPago`}>
           Continuar compra
         </Link>
         <button

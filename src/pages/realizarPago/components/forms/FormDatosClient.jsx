@@ -1,7 +1,5 @@
 import { useDispatch } from "react-redux";
-import useForm from "../../../hooks/useForm";
-
-import "./auth.css";
+import useForm from "../../../../hooks/useForm";
 
 const FormDatosClient = () => {
   const [state, hanleInputChange] = useForm({ email: "" });

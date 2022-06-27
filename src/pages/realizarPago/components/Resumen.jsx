@@ -1,4 +1,4 @@
-import { CartListProducts, TotalCartValue } from "./../../components";
+import { CartListProducts, TotalCartValue } from "./../../../components";
 
 const Resumen = () => {
   return (

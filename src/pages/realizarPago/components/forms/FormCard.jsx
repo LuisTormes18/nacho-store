@@ -1,4 +1,5 @@
 import React from "react";
+import useForm from "../../../../hooks/useForm";
 
 const FormCard = () => {
   const [state, handleInputChange] = useForm({
@@ -7,7 +8,7 @@ const FormCard = () => {
     date: Date(),
     cvv: "",
   });
-  const { nameCard, numberCard } = state;
+  const { nameCard, numberCard,date, cvv } = state;
   return (
     <div>
       <form className="row g-3">
