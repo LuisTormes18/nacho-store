@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export function getTotalCartValue(products) {
+export function calculateTotalCartValue(products) {
   const total = products
     .map((P) => P.price * P.quantity)
     .reduce((acum, price) => {
@@ -8,7 +8,6 @@ export function getTotalCartValue(products) {
       return acum;
     });
 
-  console.log(total);
   return total;
 }
 export function isProductInCart(id, productsInCart) {
