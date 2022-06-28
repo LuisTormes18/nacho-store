@@ -7,7 +7,7 @@
   padding: 5px 10px;
   margin-bottom: 25px;
   margin-right: 10px;
-  margin-left: 10px;
+  /*margin-left: 10px;*/
   cursor: pointer;
 }
 .tab-button:focus {
@@ -19,4 +19,10 @@
 }
 .nav-pills .nav-link {
   color: var(--dark-gray);
+}
+.container_plano{
+  color: #6f706f;
+  border: 1px solid #bebebe !important;
+  border-radius: 8px;
+  padding: 5px 10px;
 }

@@ -37,7 +37,13 @@ main {
 /*.navbar-collapse {
   flex-grow: 0 !important;
 }*/
-
+.text-gray{
+  color: var(--dark-gray);
+  
+}
+.text-black{
+  color: var(--black);
+}
 p {
   font-size: 14px;
   color: var(--dark-gray);
@@ -48,7 +54,18 @@ a {
 section {
   padding: 60px;
 }
+.font-size-14px{
+  font-size: 14px !important;
 
+}
+.font-size-30px{
+  font-size: 30px !important;
+
+}
+.font-size-45px{
+  font-size: 45px !important;
+
+}
 h2 {
   font-size: 24px !important;
   font-weight: bold;
@@ -66,3 +83,13 @@ form {
   background-color: var(--orange) !important;
   color: var(--white);
 }
+.linea-bottom-gray{
+  padding-bottom: 15px !important;
+  margin-bottom: 15px !important;
+  border-bottom: 1px solid var(--light-gray) !important;
+ ;
+}
+/*ul{
+  background-color: red !important;
+  m
+}*/

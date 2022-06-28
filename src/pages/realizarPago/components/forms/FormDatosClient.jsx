@@ -12,8 +12,8 @@ const FormDatosClient = () => {
 
   return (
     <form className="from p-0" onSubmit={handleSubmit}>
-      <div className="form-group mb-5 mt-5">
-        <label>Correo electronico</label>
+      <div className="form-group mb-3 mt-3">
+        <label className="mb-3 mt-3 text-gray font-size-14px">Correo electronico</label>
         <input
           className="form-control"
           onChange={hanleInputChange}
@@ -23,7 +23,7 @@ const FormDatosClient = () => {
         />
       </div>
 
-      <div className="form-group mb-5">
+      <div className="form-group mb-3">
         <input
           type="submit"
           className="btn btn-warning w-100"
