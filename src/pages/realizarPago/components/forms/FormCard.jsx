@@ -8,7 +8,7 @@ const FormCard = () => {
     date: Date(),
     cvv: "",
   });
-  const { nameCard, numberCard,date, cvv } = state;
+  const { nameCard, numberCard, date, cvv } = state;
   return (
     <div>
       <form className="row g-3">

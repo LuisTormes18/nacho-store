@@ -20,9 +20,3 @@
 .nav-pills .nav-link {
   color: var(--dark-gray);
 }
-.container_plano{
-  color: #6f706f;
-  border: 1px solid #bebebe !important;
-  border-radius: 8px;
-  padding: 5px 10px;
-}

@@ -2,7 +2,7 @@ import { setUserLocalStorage } from "./../../utils/utils";
 import { types } from "./../types/types";
 export const startLoginWhitEmailAndCode = (state) => {
   // logica el login
-  return login({ ui: 1, name: "Juan Rivera" });
+  return login({ ui: 1, name: "Juan Rivera", email: "juancho_r@gmail.com" });
 };
 
 export const openModalLogin = () => {

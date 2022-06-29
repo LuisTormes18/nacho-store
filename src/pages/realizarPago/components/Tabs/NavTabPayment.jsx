@@ -12,7 +12,7 @@ const NavTabPayment = () => {
   ];
 
   return (
-    <div className="payment-container">
+    <div className="container_radius">
       <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li className="nav-item" role="presentation">
           <TabButton tab={tab1.tab} text={tab1.text} icon={BsCreditCard} />
@@ -38,20 +38,21 @@ const NavTabPayment = () => {
           aria-labelledby={`pills-${tab2.tab}-tab`}
           tabIndex="3"
         >
-          <div
-          className="container_plano w-100 text-center p-4"
-          tabIndex="0"
-        >
-          <p>Has click en el boton para pagar con tu cuenta paypal</p>
-          <p className="font-size-45px" > {`${total}.00`} 
-          <span className="font-size-30px"> USD  </span>
-          </p>
-          <a href="#" className="btn btn-warning w-100">PayPal</a>
-        </div>
+          <div className="container_plano w-100 text-center p-4" tabIndex="0">
+            <p>Has click en el boton para pagar con tu cuenta paypal</p>
+            <p className="font-size-45px">
+              {" "}
+              {`${total}.00`}
+              <span className="font-size-30px"> USD </span>
+            </p>
+            <a href="#" className="btn btn-warning w-100">
+              PayPal
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  ); 
+  );
 };
 
 export default NavTabPayment;

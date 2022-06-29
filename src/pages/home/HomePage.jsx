@@ -46,7 +46,7 @@ const HomePage = () => {
           <div className="col-12 col-md-6 p-3 pt-md-0">
             <h2>Nacho Shop</h2>
             <h4>Abrimos nuestra tienda fisica!</h4>
-            <p>
+            <p className="font-size-14px text-gray">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500, cuando un impresor

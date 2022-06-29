@@ -3,9 +3,9 @@ import { calculateTotalCartValue } from "./../utils/utils";
 
 const useTotalCartValue = () => {
   const { productsInCart } = useSelector((state) => state.shoppingCart);
-	const total = calculateTotalCartValue(productsInCart) || 0
+  const total = calculateTotalCartValue(productsInCart) || 0;
 
-	return { total }
-}
+  return { total };
+};
 
-export default useTotalCartValue
+export default useTotalCartValue;
