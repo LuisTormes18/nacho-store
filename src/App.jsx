@@ -7,6 +7,7 @@ import {
   CategoriesPage,
   CategoryPage,
   ProfilePage,
+  PedidosPage,
   RealizarPagoPage,
 } from "./pages";
 import { updateLocalStorage } from "./utils/utils";
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/categories/:id" element={<CategoryPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/pedidos" element={<PedidosPage />} />
             <Route path="/realizarPago" element={<RealizarPagoPage />} />
             <Route path="*" element={<div> Error 404! </div>} />
           </Routes>

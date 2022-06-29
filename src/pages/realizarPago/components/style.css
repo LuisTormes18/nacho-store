@@ -9,13 +9,18 @@
   margin-right: 10px;
   /*margin-left: 10px;*/
   cursor: pointer;
+
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .tab-button:focus {
   color: orange;
 }
 .nav-pills .nav-link.active {
-  color: var(--orange);
-  background-color: #fff;
+  color: var(--orange) !important;
+  background-color: #fff !important;
 }
 .nav-pills .nav-link {
   color: var(--dark-gray);

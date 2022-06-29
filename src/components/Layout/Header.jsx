@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdShoppingCart } from "react-icons/md";
-
+import { Dropdown } from "react-bootstrap";
 import Cinta from "./Cinta";
 
-import "./index.css";
 import { openModalCart } from "./../../stateManagement/actions/shoppinCart";
 import { openModalLogin } from "./../../stateManagement/actions/auth";
 import ModalLogin from "./../modals/ModalLogin";
 import ModalCart from "./../modals/ModalCart";
+
+import "./index.css";
 
 const Header = () => {
   const {
@@ -24,6 +25,7 @@ const Header = () => {
   function handleOpenModalCart() {
     dispatch(openModalCart());
   }
+
   return (
     <header className="header">
       <div className="container p-2 d-flex justify-content-between align-items-center">
@@ -42,34 +44,23 @@ const Header = () => {
               Ingresar
             </button>
           ) : (
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">
-                  Action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </div>
+            <Dropdown>
+              <Dropdown.Toggle variant="light" id="dropdown-basic">
+                {user.name}
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Link className="btn " to={`./profile`}>
+                  Mi perfil
+                </Link>
+                <Link className="btn " to={`./pedidos`}>
+                  Pedidos
+                </Link>
+                <button className="btn">Salir</button>
+              </Dropdown.Menu>
+            </Dropdown>
           )}
 
-          {/*<Link className="btn " to={`./profile`}>
-              {user?.name}
-            </Link>*/}
           <div className="shoppingCart">
             <button
               className={`btn-cart ${productsInCart.length > 0 && "bg-orange"}`}

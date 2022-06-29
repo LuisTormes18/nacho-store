@@ -1,45 +1,39 @@
+import { Tab, Nav, Row, Col } from "react-bootstrap";
 import TabButton from "./TabButton";
 import FormEncomienda from "../forms/FormEncomienda";
 import { GiDutchBike } from "react-icons/gi";
 import { HiTruck } from "react-icons/hi";
 
 const NavTabDeliveryType = () => {
-  const [tab1, tab2] = [
-    { tab: "delivery", text: "Delivery" },
-    { tab: "encomienda", text: "Encomienda" },
-  ];
-
   return (
-    <div>
-      <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li className="nav-item" role="presentation">
-          <TabButton tab={tab1.tab} text={tab1.text} icon={GiDutchBike} />
-        </li>
-        <li className="nav-item" role="presentation">
-          <TabButton tab={tab2.tab} text={tab2.text} icon={HiTruck} />
-        </li>
-      </ul>
-      <div className="tab-content" id="pills-tabContent">
-        <div
-          className="tab-pane fade show active"
-          id={`pills-${tab1.tab}`}
-          role="tabpanel"
-          aria-labelledby={`pills-${tab1.tab}-tab`}
-          tabIndex="0"
-        >
-          DeliveryTRTr
-        </div>
-        <div
-          className="tab-pane fade"
-          id={`pills-${tab2.tab}`}
-          role="tabpanel"
-          aria-labelledby={`pills-${tab2.tab}-tab`}
-          tabIndex="1"
-        >
-          <FormEncomienda />
-        </div>
-      </div>
-    </div>
+    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      <Row>
+        <Col sm={12}>
+          <Nav variant="pills" className="d-flex">
+            <Nav.Item>
+              <Nav.Link eventKey="first" className="tab-button">
+                <GiDutchBike size="30" />
+                Delivery{" "}
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second" className="tab-button">
+                <HiTruck size="30" />
+                Encomienda{" "}
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Col>
+        <Col sm={12}>
+          <Tab.Content>
+            <Tab.Pane eventKey="first">DeliveryTRTr</Tab.Pane>
+            <Tab.Pane eventKey="second">
+              <FormEncomienda />
+            </Tab.Pane>
+          </Tab.Content>
+        </Col>
+      </Row>
+    </Tab.Container>
   );
 };
 

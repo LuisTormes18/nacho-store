@@ -2,6 +2,7 @@ import HomePage from "./home/HomePage";
 import CategoriesPage from "./categories/CategoriesPage";
 import CategoryPage from "./categories/CategoryPage";
 import ProfilePage from "./profile/ProfilePage";
+import PedidosPage from "./profile/PedidosPage";
 import RealizarPagoPage from "./realizarPago/RealizarPagoPage";
 
 export {
@@ -9,5 +10,6 @@ export {
   CategoriesPage,
   CategoryPage,
   ProfilePage,
+  PedidosPage,
   RealizarPagoPage,
 };

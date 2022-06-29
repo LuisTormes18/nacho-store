@@ -24,6 +24,14 @@
   border-left: 1px solid var(--light-gray);
   padding-left: 20px;
 }
+#dropdown-basic {
+  color: var(--dark-gray) !important;
+  background-color: transparent !important;
+  border: none;
+}
+#dropdown-basic:hover {
+  color: var(--black) !important;
+}
 .btn-cart {
   height: 40px;
   border-radius: 8px;
