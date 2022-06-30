@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useCart from "./../../hooks/useCart";
-import CartListProducts from "./CartListProducts";
+import CartItem from "./CartItem";
 import TotalCartValue from "./TotalCartValue";
 
 import "./cart.css";
@@ -16,15 +16,25 @@ const Cart = ({}) => {
       <hr />
       {/*Lista de productos en el carrito*/}
 
-      <CartListProducts />
+      <div className="p-2 cart__body">
+        {productsInCart.map((product) => (
+          <CartItem
+            key={product.id}
+            product={product}
+            handleIncrement={handleIncrement}
+            handleDecrement={handleDecrement}
+            handleDelete={handleDelete}
+          />
+        ))}
+      </div>
 
       {/* footer */}
 
       <footer className="d-flex flex-column">
         <TotalCartValue text="SubTotal" />
         <hr />
-        <Link className="btn btn-warning m-3" to={`./realizarPago`}>
-          Continuar compra
+        <Link className="btn btn-warning m-3" to={`./realizar-pago`}>
+          Continuar con la compra
         </Link>
         <button
           className="btn btn-clear-cart m-5 mt-0"

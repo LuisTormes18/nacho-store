@@ -12,9 +12,11 @@ import ModalCart from "./../modals/ModalCart";
 import "./index.css";
 
 const Header = () => {
+  const { user, handleLogout } = useAuth();
+
   const {
     shoppingCart: { productsInCart, modalCartIsOpen },
-    auth: { user, modalLoginIsOpen },
+    auth: { modalLoginIsOpen },
   } = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -56,7 +58,10 @@ const Header = () => {
                 <Link className="btn " to={`./pedidos`}>
                   Pedidos
                 </Link>
-                <button className="btn">Salir</button>
+                <hr />
+                <button className="btn" onClick={handleLogout}>
+                  Salir
+                </button>
               </Dropdown.Menu>
             </Dropdown>
           )}

@@ -1,5 +1,4 @@
 import { Tab, Nav, Row, Col } from "react-bootstrap";
-import TabButton from "./TabButton";
 import FormEncomienda from "../forms/FormEncomienda";
 import { GiDutchBike } from "react-icons/gi";
 import { HiTruck } from "react-icons/hi";
@@ -13,13 +12,13 @@ const NavTabDeliveryType = () => {
             <Nav.Item>
               <Nav.Link eventKey="first" className="tab-button">
                 <GiDutchBike size="30" />
-                Delivery{" "}
+                Delivery
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="second" className="tab-button">
                 <HiTruck size="30" />
-                Encomienda{" "}
+                Encomienda
               </Nav.Link>
             </Nav.Item>
           </Nav>

@@ -28,7 +28,7 @@ const App = () => {
             <Route path="/categories/:id" element={<CategoryPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/pedidos" element={<PedidosPage />} />
-            <Route path="/realizarPago" element={<RealizarPagoPage />} />
+            <Route path="/realizar-pago" element={<RealizarPagoPage />} />
             <Route path="*" element={<div> Error 404! </div>} />
           </Routes>
         </LayoutContainer>

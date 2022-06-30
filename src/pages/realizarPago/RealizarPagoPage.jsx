@@ -7,7 +7,7 @@ import {
   FormDatosClient,
   NavTabDeliveryType,
   NavTabPayment,
-  Resumen,
+  SummaryCart,
 } from "./components";
 
 import "./style.css";
@@ -52,7 +52,7 @@ const RealizarPagoPage = () => {
 
         <div className="right row col-6">
           <div className="col-12">
-            <Resumen />
+            <SummaryCart />
           </div>
           <div className="col-12">
             <NavTabPayment />
