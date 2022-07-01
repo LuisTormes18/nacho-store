@@ -42,7 +42,7 @@ const RealizarPagoPage = () => {
           </div>
 
           <div className="col-12 pt-0">
-            <h3 className="linea-bottom-gray">Entrega</h3>
+            <h3 className="linea-bottom-gray pt-5">Entrega</h3>
 
             {/*Tabs*/}
             <NavTabDeliveryType />

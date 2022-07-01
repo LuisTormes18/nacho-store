@@ -30,6 +30,7 @@ const NavTabDeliveryType = () => {
           <Tab.Content>
             <Tab.Pane eventKey="first">
               <MapLeaflet />
+              
             </Tab.Pane>
             <Tab.Pane eventKey="second">
               <FormEncomienda />
