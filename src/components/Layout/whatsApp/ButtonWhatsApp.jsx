@@ -1,14 +1,14 @@
 import { SiWhatsapp } from "react-icons/si";
 import "./styles.css";
 
-const WhatsApp = () => {
+const ButtonWhatsApp = () => {
   return (
     <div className="wa">
-      <div className="wa__icon">
+      <button className="wa__icon">
         <SiWhatsapp size="30" color="#F1F1F1" />
-      </div>
+      </button>
     </div>
   );
 };
 
-export default WhatsApp;
+export default ButtonWhatsApp;

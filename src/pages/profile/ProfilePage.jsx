@@ -1,10 +1,19 @@
 import { Tabs, Tab } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+
+import useAuth from "./../../hooks/useAuth";
 
 import "./style.css";
-import useAuth from "./../../hooks/useAuth";
 
 const ProfilePage = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
+
+  function handleReturn() {
+    console.log("click");
+    navigate(-1);
+  }
 
   if (!user) {
     return (
@@ -18,6 +27,9 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page container p-5">
+      <button className="btn" onClick={handleReturn}>
+        <IoIosArrowBack />
+      </button>
       <h2>Mi perfil</h2>
       <div className="d-flex justify-content-center">
         <div>

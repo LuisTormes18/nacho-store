@@ -1,12 +1,26 @@
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import useCart from "./../../hooks/useCart";
 import CartItem from "./CartItem";
 import TotalCartValue from "./TotalCartValue";
+import { closeModalCart } from "./../../stateManagement/actions/shoppinCart";
 
 import "./cart.css";
 
 const Cart = ({}) => {
-  const { productsInCart, handleClearCart } = useCart();
+  const {
+    productsInCart,
+    handleClearCart,
+    handleDecrement,
+    handleIncrement,
+    handleDelete,
+  } = useCart();
+
+  const { modalCartIsOpen } = useSelector((state) => state.shoppingCart);
+  const dispatch = useDispatch();
+  function handleCloseModal() {
+    dispatch(closeModalCart());
+  }
 
   return (
     <div className="h-100 cart">
@@ -33,7 +47,11 @@ const Cart = ({}) => {
       <footer className="d-flex flex-column">
         <TotalCartValue text="SubTotal" />
         <hr />
-        <Link className="btn btn-warning m-3" to={`./realizar-pago`}>
+        <Link
+          className="btn btn-warning m-3"
+          onClick={handleCloseModal}
+          to={`./realizar-pago`}
+        >
           Continuar con la compra
         </Link>
         <button

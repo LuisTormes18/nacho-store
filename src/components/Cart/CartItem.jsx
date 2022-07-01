@@ -1,4 +1,5 @@
 import { RiDeleteBinLine, RiAddLine, RiSubtractLine } from "react-icons/ri";
+import { formatPriceToUsd } from "../../utils/utils";
 
 const CartItem = ({
   product,
@@ -21,7 +22,7 @@ const CartItem = ({
               handleDecrement(product.id);
             }}
           />
-          <span className="text-bold">{product.quantity}$</span>
+          <span className="text-bold">{product.quantity}</span>
           <RiAddLine
             className="icon"
             size="15"
@@ -32,7 +33,9 @@ const CartItem = ({
         </div>
       </div>
       <div className="d-flex flex-column ms-5 align-items-end">
-        <p className="text-bold">{product.price * product.quantity}$</p>
+        <p className="text-bold">
+          {formatPriceToUsd(product.price * product.quantity)}
+        </p>
         <RiDeleteBinLine
           size="25"
           onClick={() => {

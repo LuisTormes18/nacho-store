@@ -1,4 +1,4 @@
-import useCart from './../../../hooks/useCart';
+import useCart from "./../../../hooks/useCart";
 import { CartItem, TotalCartValue } from "../../../components";
 
 const SummaryCart = () => {

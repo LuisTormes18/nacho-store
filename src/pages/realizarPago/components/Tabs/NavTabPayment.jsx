@@ -3,6 +3,8 @@ import { BsCreditCard, BsPaypal } from "react-icons/bs";
 import FormCard from "../forms/FormCard";
 import useTotalCartValue from "./../../../../hooks/useTotalCartValue";
 
+import "./../style.css";
+
 const NavTabPayment = () => {
   const { total } = useTotalCartValue();
 

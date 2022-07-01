@@ -8,6 +8,7 @@ import { openModalCart } from "./../../stateManagement/actions/shoppinCart";
 import { openModalLogin } from "./../../stateManagement/actions/auth";
 import ModalLogin from "./../modals/ModalLogin";
 import ModalCart from "./../modals/ModalCart";
+import useAuth from "./../../hooks/useAuth";
 
 import "./index.css";
 

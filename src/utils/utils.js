@@ -8,7 +8,7 @@ export function calculateTotalCartValue(products) {
       return acum;
     });
 
-  return total;
+  return formatPriceToUsd(total);
 }
 export function isProductInCart(id, productsInCart) {
   return productsInCart.map((p) => p.id).includes(id);
@@ -44,4 +44,13 @@ export const getUserFromLocalStorage = () => {
 };
 export const setUserLocalStorage = (user) => {
   localStorage.setItem("user", JSON.stringify(user));
+};
+
+export const formatPriceToUsd = (price) => {
+  const dollarUsd = Intl.NumberFormat("en-Us", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  return dollarUsd.format(price);
 };

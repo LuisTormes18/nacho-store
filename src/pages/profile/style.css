@@ -3,7 +3,7 @@
 .nav-tabs {
   border-bottom: 0 !important;
   background-color: var(--light-gray);
-  padding: 3px 40px;
+  padding: 5px 40px;
   border-radius: 8px;
 }
 .nav-link {

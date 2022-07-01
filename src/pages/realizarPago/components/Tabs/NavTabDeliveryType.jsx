@@ -2,6 +2,9 @@ import { Tab, Nav, Row, Col } from "react-bootstrap";
 import FormEncomienda from "../forms/FormEncomienda";
 import { GiDutchBike } from "react-icons/gi";
 import { HiTruck } from "react-icons/hi";
+import MapLeaflet from "./../MapLeaflet";
+
+import "./../style.css";
 
 const NavTabDeliveryType = () => {
   return (
@@ -25,7 +28,9 @@ const NavTabDeliveryType = () => {
         </Col>
         <Col sm={12}>
           <Tab.Content>
-            <Tab.Pane eventKey="first">DeliveryTRTr</Tab.Pane>
+            <Tab.Pane eventKey="first">
+              <MapLeaflet />
+            </Tab.Pane>
             <Tab.Pane eventKey="second">
               <FormEncomienda />
             </Tab.Pane>
