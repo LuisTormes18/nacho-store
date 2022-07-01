@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useMap } from 'react-leaflet';
+import { useEffect } from "react";
+import { useMap } from "react-leaflet";
 import { GeoSearchControl, AlgoliaProvider } from "leaflet-geosearch";
 
 const SearchField = () => {
