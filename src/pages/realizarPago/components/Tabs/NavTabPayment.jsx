@@ -37,7 +37,7 @@ const NavTabPayment = () => {
                 <div className="container_plano w-100 text-center p-4">
                   <p>Has click en el boton para pagar con tu cuenta paypal</p>
                   <p className="font-size-45px">
-                    {`${total}.00`}
+                    {total}
                     <span className="font-size-30px"> USD </span>
                   </p>
                   <a href="#" className="btn btn-warning w-100">
