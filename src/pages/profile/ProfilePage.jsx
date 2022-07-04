@@ -1,5 +1,6 @@
 import { Tabs, Tab } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { IoIosArrowBack } from "react-icons/io";
 
 import useAuth from "./../../hooks/useAuth";
@@ -15,18 +16,12 @@ const ProfilePage = () => {
     navigate(-1);
   }
 
-  if (!user) {
-    return (
-      <div className="profile-page d-flex justify-content-center align-items-center">
-        <div>
-          <h3>No ha iniciado sesion</h3>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="profile-page container p-5">
+     <Helmet>
+                <title>Nacho Store | Perfil</title>
+     </Helmet>
+
       <button className="btn" onClick={handleReturn}>
         <IoIosArrowBack />
       </button>

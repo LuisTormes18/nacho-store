@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { IoIosArrowForward } from "react-icons/io";
 
 import useCategories from "./../../hooks/useCategories";
@@ -12,6 +13,11 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
+    <Helmet>
+                <title>Nacho Store | Home</title>
+     </Helmet>
+
+
       <div className="banner"></div>
       <section className="section-categories">
         <div className="p-2 text-end">

@@ -1,5 +1,6 @@
 import { Tabs, Tab } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { IoIosArrowBack } from "react-icons/io";
 
 import "./style.css";
@@ -14,6 +15,10 @@ const PedidosPage = () => {
 
   return (
     <div className="profile-page container p-5">
+    <Helmet>
+                <title>Nacho Store | Pedidos</title>
+     </Helmet>
+
       <button className="btn" onClick={handleReturn}>
         <IoIosArrowBack />
       </button>

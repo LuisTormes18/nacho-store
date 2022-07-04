@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 
 import useProducts from "./../../hooks/useProducts";
@@ -19,6 +20,10 @@ const CategoryPage = ({}) => {
   }
   return (
     <div className="container mt-4 p-4 pb-5">
+     <Helmet>
+                <title>Nacho Store | {category}</title>
+     </Helmet>
+
       <header>
         <h2 className="pb-4 ">{category?.title}</h2>
 

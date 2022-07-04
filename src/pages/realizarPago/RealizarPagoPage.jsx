@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
+import { Helmet } from "react-helmet";
 import { IoIosArrowBack } from "react-icons/io";
 import {
   FormDatosClient,
@@ -23,6 +23,9 @@ const RealizarPagoPage = () => {
 
   return (
     <div className="container cart-page pt-1">
+    <Helmet>
+                <title>Nacho Store | Pagar</title>
+     </Helmet>
       <div className="row cols-2 justify-content-center justify-content-md-between">
         <div className="left row col-12 col-md-6">
           <div className="col-12">

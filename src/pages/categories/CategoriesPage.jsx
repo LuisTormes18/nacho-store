@@ -1,4 +1,5 @@
 import { RowCategory } from "./../../components";
+import { Helmet } from "react-helmet";
 import { IoIosSearch } from "react-icons/io";
 
 import useCategories from "./../../hooks/useCategories";
@@ -9,6 +10,10 @@ const CategoriesPage = () => {
   const [categories, filters, filterCategories] = useCategories();
   return (
     <div className="pb-5">
+     <Helmet>
+                <title>Nacho Store | Caregories</title>
+     </Helmet>
+
       <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
         <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
           <li
