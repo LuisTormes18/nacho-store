@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LayoutContainer } from "./components";
 import {
   HomePage,
@@ -11,9 +11,14 @@ import {
   RealizarPagoPage,
 } from "./pages";
 import { updateLocalStorage } from "./utils/utils";
+import useCart from "./hooks/useCart";
+import useAuth from "./hooks/useAuth";
 
 const App = () => {
-  const { productsInCart } = useSelector((state) => state.shoppingCart);
+  const { productsInCart } = useCart();
+  const { user } = useAuth();
+  let isAuthenticate = !!user;
+
   useEffect(() => {
     updateLocalStorage(productsInCart);
   }, [productsInCart]);
@@ -26,8 +31,26 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/categories/:id" element={<CategoryPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/pedidos" element={<PedidosPage />} />
+            <Route
+              path="/profile"
+              element={
+                isAuthenticate ? (
+                  <ProfilePage />
+                ) : (
+                  <Navigate to="/" replace={true} />
+                )
+              }
+            />
+            <Route
+              path="/pedidos"
+              element={
+                isAuthenticate ? (
+                  <PedidosPage />
+                ) : (
+                  <Navigate to="/" replace={true} />
+                )
+              }
+            />
             <Route path="/realizar-pago" element={<RealizarPagoPage />} />
             <Route path="*" element={<div> Error 404! </div>} />
           </Routes>
