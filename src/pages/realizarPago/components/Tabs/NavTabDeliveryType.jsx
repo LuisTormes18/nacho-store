@@ -2,7 +2,7 @@ import { Tab, Nav, Row, Col } from "react-bootstrap";
 import FormEncomienda from "../forms/FormEncomienda";
 import { GiDutchBike } from "react-icons/gi";
 import { HiTruck } from "react-icons/hi";
-import MapLeaflet from "./../MapLeaflet";
+import MapLeaflet from "./../map/MapLeaflet";
 
 import "./../style.css";
 
@@ -11,7 +11,7 @@ const NavTabDeliveryType = () => {
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={12}>
-          <Nav variant="pills" className="d-flex">
+          <Nav variant="pills" className="d-flex justify-content-start">
             <Nav.Item>
               <Nav.Link eventKey="first" className="tab-button">
                 <GiDutchBike size="30" />

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "react-modal";
 import { closeModalLogin } from "../../stateManagement/actions/auth";
-import FormLogin from "../auth/FormLogin";
+import Authentication from "../auth/Authentication";
 
 const ModalLogin = ({ children }) => {
   const { modalLoginIsOpen } = useSelector((state) => state.auth);
@@ -43,9 +43,7 @@ const ModalLogin = ({ children }) => {
       style={customStyles}
       contentLabel="Login Modal"
     >
-      <h3 className="text-center pt-4"> Ingresa tu cuenta </h3>
-
-      <FormLogin />
+      <Authentication />
     </Modal>
   );
 };

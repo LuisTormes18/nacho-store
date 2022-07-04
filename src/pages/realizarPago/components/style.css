@@ -6,7 +6,7 @@
   border-radius: 8px;
   padding: 5px 10px;
   margin-bottom: 25px;
-  margin-right: 10px;
+  margin-right: 7px;
   /*margin-left: 10px;*/
   cursor: pointer;
 
@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .tab-button:focus {
   color: orange;
 }
@@ -25,6 +26,7 @@
 .nav-pills .nav-link {
   color: var(--dark-gray);
 }
+
 /*Map*/
 .map-leaflet {
   width: 100%;
@@ -38,3 +40,11 @@
 
 }*/
 /*Fin Map*/
+/*div.geosearch{
+  position: absolute;
+  top: 0;
+  background-color: red;
+}
+input.glass{
+position: absolute;
+}*/

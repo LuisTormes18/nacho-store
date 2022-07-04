@@ -23,8 +23,8 @@ const RealizarPagoPage = () => {
 
   return (
     <div className="container cart-page pt-1">
-      <div className="row cols-2">
-        <div className="left row col-6">
+      <div className="row cols-2 justify-content-center justify-content-md-between">
+        <div className="left row col-12 col-md-6">
           <div className="col-12">
             <button className="btn" onClick={handleReturn}>
               <IoIosArrowBack />
@@ -50,7 +50,7 @@ const RealizarPagoPage = () => {
           </div>
         </div>
 
-        <div className="right row col-6">
+        <div className="right row col-12 col-md-6">
           <div className="col-12">
             <SummaryCart />
           </div>
