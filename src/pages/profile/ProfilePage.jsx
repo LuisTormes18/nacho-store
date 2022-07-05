@@ -18,9 +18,9 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page container p-5">
-     <Helmet>
-                <title>Nacho Store | Perfil</title>
-     </Helmet>
+      <Helmet>
+        <title>Perfil | Nacho Store</title>
+      </Helmet>
 
       <button className="btn" onClick={handleReturn}>
         <IoIosArrowBack />

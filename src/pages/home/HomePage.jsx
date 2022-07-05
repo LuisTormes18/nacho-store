@@ -13,10 +13,9 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-    <Helmet>
-                <title>Nacho Store | Home</title>
-     </Helmet>
-
+      <Helmet>
+        <title>Nacho Store | Home</title>
+      </Helmet>
 
       <div className="banner"></div>
       <section className="section-categories">

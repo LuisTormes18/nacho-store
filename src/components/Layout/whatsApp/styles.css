@@ -19,30 +19,34 @@
   height: 0px;
   top: 0;
   left: 0;
-  background-color: silver;
+  background-color: #fff;
   position: absolute;
 
   visibility: hidden;
-  display: none;
-  box-shadow: 0 5px 10px 5px var(--dark-gray);
+  opacity: 0;
+  /*display: none;*/
+  box-shadow: 0 12px 24px 0 rgb(0 0 0 / 10%);
+  background: #fff;
+  border: none;
+  border-radius: 15px;
 
-  border-radius: 18px !important;
-
-  transition: 6s;
+  overflow: hidden;
+  transition: 0.4s;
 }
 .chat__container-visible {
-  display: block;
+  /*display: block;*/
   visibility: visible;
-  width: 350px;
-  height: 300px;
-  top: -310px;
-  left: -300px;
+  opacity: 1;
+  width: 360px;
+  height: 365px;
+  top: -370px;
+  left: -320px;
 }
 /* header  */
 .chat__header {
   background-color: #075e54;
   height: 60px;
-  border-radius: 18px 18px 0 0 !important;
+  border-radius: 15px 15px 0 0 !important;
   color: white;
   /*#128C7E*/
 }
@@ -60,12 +64,14 @@
   flex: 1 1 auto;
   height: 150px;
   background-image: url("https://i.pinimg.com/236x/85/70/f6/8570f6339d3189c96e340d47a581d3b8.jpg");
+
+  padding: 25px;
 }
 /* footer */
 .chat__footer {
   /*height: 100px;*/
   background-color: var(--light-gray);
-  border-radius: 0 0 18px 18px !important;
+  border-radius: 0 0 15px 15px !important;
 }
 .form-message {
   /*background-color: red;*/
@@ -80,4 +86,28 @@
   color: white !important;
   height: 30px !important;
   padding: 0 !important;
+}
+.message {
+  border: none;
+  border-radius: 0 8px 8px 8px;
+  position: relative;
+  /*z-index: 500;*/
+  padding: 10px;
+  font-size: 14px;
+}
+.message__payco {
+  background-color: #fff;
+  width: 70%;
+}
+.message__payco::before {
+  position: absolute;
+  top: 0;
+  left: -17px;
+  display: block;
+  /*background-color: red;*/
+  content: "";
+  width: 10px;
+  border-right: 25px solid transparent;
+  border-left: 25px solid transparent;
+  border-top: 20px solid #fff;
 }

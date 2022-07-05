@@ -23,9 +23,9 @@ const RealizarPagoPage = () => {
 
   return (
     <div className="container cart-page pt-1">
-    <Helmet>
-                <title>Nacho Store | Pagar</title>
-     </Helmet>
+      <Helmet>
+        <title>Pagar | Nacho Store</title>
+      </Helmet>
       <div className="row cols-2 justify-content-center justify-content-md-between">
         <div className="left row col-12 col-md-6">
           <div className="col-12">

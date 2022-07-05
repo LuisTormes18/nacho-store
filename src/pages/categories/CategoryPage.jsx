@@ -20,9 +20,9 @@ const CategoryPage = ({}) => {
   }
   return (
     <div className="container mt-4 p-4 pb-5">
-     <Helmet>
-                <title>{`Nacho Store | ${category?.title}`}</title>
-     </Helmet>
+      <Helmet>
+        <title>{`${category?.title} | Nacho Store`}</title>
+      </Helmet>
 
       <header>
         <h2 className="pb-4 ">{category?.title}</h2>

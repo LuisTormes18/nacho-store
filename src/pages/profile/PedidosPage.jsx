@@ -15,9 +15,9 @@ const PedidosPage = () => {
 
   return (
     <div className="profile-page container p-5">
-    <Helmet>
-                <title>Nacho Store | Pedidos</title>
-     </Helmet>
+      <Helmet>
+        <title>Pedidos | Nacho Store</title>
+      </Helmet>
 
       <button className="btn" onClick={handleReturn}>
         <IoIosArrowBack />
