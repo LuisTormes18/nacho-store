@@ -4,7 +4,7 @@ import CategoryPage from "./categories/CategoryPage";
 import ProfilePage from "./profile/ProfilePage";
 import PedidosPage from "./profile/PedidosPage";
 import RealizarPagoPage from "./realizarPago/RealizarPagoPage";
-
+import Error404 from "./error404/Error404";
 export {
   HomePage,
   CategoriesPage,
@@ -12,4 +12,5 @@ export {
   ProfilePage,
   PedidosPage,
   RealizarPagoPage,
+  Error404,
 };

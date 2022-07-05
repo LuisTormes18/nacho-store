@@ -9,6 +9,7 @@ import {
   ProfilePage,
   PedidosPage,
   RealizarPagoPage,
+  Error404,
 } from "./pages";
 import { updateLocalStorage } from "./utils/utils";
 import useCart from "./hooks/useCart";
@@ -52,7 +53,7 @@ const App = () => {
               }
             />
             <Route path="/realizar-pago" element={<RealizarPagoPage />} />
-            <Route path="*" element={<div> Error 404! </div>} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </LayoutContainer>
       </BrowserRouter>
