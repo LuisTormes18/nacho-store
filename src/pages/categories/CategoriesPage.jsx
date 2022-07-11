@@ -16,28 +16,23 @@ const CategoriesPage = () => {
 
       <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
         <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
-          <li
-            className="item"
+          <li>
+            <button className="item"
             onClick={() => {
               filterCategories("all");
-            }}
-          >
-            <a className="" href="#">
+            }}>
               All
-            </a>
+            </button >
           </li>
           {filters?.map((f) => (
-            <li
-              className="item"
-              key={f.id}
-              onClick={() => {
-                filterCategories(f.title);
-              }}
-            >
-              <a className="" href="#">
-                {f.title}
-              </a>
-            </li>
+             <li key={f.id}>
+            <button className="item"
+            onClick={() => {
+              filterCategories(f?.name);
+            }}>
+              {f?.name}
+            </button >
+          </li>
           ))}
         </ul>
         <form className="form-search d-flex align-items-center mb-4 mb-sm-0 p-1">

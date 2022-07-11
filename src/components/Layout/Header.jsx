@@ -8,6 +8,7 @@ import { openModalCart } from "./../../stateManagement/actions/shoppinCart";
 import { openModalLogin } from "./../../stateManagement/actions/auth";
 import ModalLogin from "./../modals/ModalLogin";
 import ModalCart from "./../modals/ModalCart";
+import Logo from "./../logo/Logo";
 import useAuth from "./../../hooks/useAuth";
 
 import "./index.css";
@@ -33,10 +34,7 @@ const Header = () => {
     <header className="header">
       <div className="container p-2 d-flex justify-content-between align-items-center">
         <Link to="/">
-          <img
-            className="logo img-fluid"
-            src="https://shopsqa.lukapay.io/static/nachoLogoG-144ac61f9c3fe85097f152cd0e0128c9.jpg"
-          />
+         <Logo />
         </Link>
         <div className="header-nav d-flex align-items-center">
           {!user ? (

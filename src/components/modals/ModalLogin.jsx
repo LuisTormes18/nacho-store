@@ -27,8 +27,8 @@ const ModalLogin = ({ children }) => {
       padding: "10px",
       backgroundColor: "#FFF",
       border: "none",
-      width: "400px",
-      // height: "auto",
+      width: "90%",
+      maxWidth: "400px",
       minHeight: "250px",
     },
   };

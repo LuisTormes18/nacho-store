@@ -53,6 +53,9 @@ a {
 section {
   padding: 60px;
 }
+.font-size-12px {
+  font-size: 14px !important;
+}
 .font-size-14px {
   font-size: 14px !important;
 }

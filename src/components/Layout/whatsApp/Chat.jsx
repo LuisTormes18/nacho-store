@@ -22,7 +22,6 @@ const Chat = ({ visible, setVisible }) => {
           <div className="pt-3">
             <span>Payco</span>
             <p className="font-size-14px">
-              {" "}
               Responderemos en las siguientes 24hrs{" "}
             </p>
           </div>

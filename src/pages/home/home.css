@@ -1,16 +1,12 @@
 .banner {
   height: 420px;
-  background-image: url("https://cdn.colombia.com/sdi/2022/06/01/rumores-infidelidad-nacho-a-melany-millie-1034772.jpg");
+  background-image: url("https://api-dev.dondemand.io/storage/companies/69/branch/branch_banner_34_1634849251.jpg");
   background-color: silver;
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-/*.section-categories{
-  padding: 60px;
-}*/
 hr {
-  /*  margin: 60px;*/
   background-color: var(--dark-gray);
 }

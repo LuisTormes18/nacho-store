@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const instanceAxios = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/",
-  // baseURL: "https://ali-express1.p.rapidapi.com",
+  baseURL: "http://localhost:4000/api/",
 });
 
 export default instanceAxios;

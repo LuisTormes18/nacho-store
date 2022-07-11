@@ -21,11 +21,11 @@ const CategoryPage = ({}) => {
   return (
     <div className="container mt-4 p-4 pb-5">
       <Helmet>
-        <title>{`${category?.title} | Nacho Store`}</title>
+        <title>{ category?.name ? `${category?.name} | Nacho Store` : "..."  }</title>
       </Helmet>
 
       <header>
-        <h2 className="pb-4 ">{category?.title}</h2>
+        <h2 className="pb-4 ">{category?.name}</h2>
 
         <div className="d-flex justify-content-between">
           <button className="btn" onClick={handleReturn}>
@@ -41,7 +41,7 @@ const CategoryPage = ({}) => {
           </form>
         </div>
       </header>
-      <div className="d-flex flex-wrap justify-content-center justify-content-md-between pt-3">
+      <div className="d-flex flex-wrap justify-content-center pt-3">
         {products?.map((p) => (
           <CardProduct key={p.id} product={p} />
         ))}

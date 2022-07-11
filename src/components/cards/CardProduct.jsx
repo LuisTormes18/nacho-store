@@ -18,18 +18,19 @@ const CardProduct = ({ product }) => {
 
   function handleAddToCart() {
     setInCart(true);
-    dispatch(addProdutToCart({ ...product, quantity: 1, price: 20 }));
+    dispatch(addProdutToCart({ ...product, quantity: 1 }));
   }
 
   return (
     <div className="card card-product text-center">
-      <img src={product.url} className="card-img-top" alt="..." />
+      <img src={product.picture_urls[0]} className="card-img-top" alt={product?.name} />
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          <span>Some quick example text to build on the card title</span>
-          <span>{formatPriceToUsd(20)}</span>
-        </p>
+        <h5 className="card-title">{product?.name}</h5>
+        <div className="card-text">
+          <p className="text-gray font-size-14px">{product?.details}</p>
+          <span className="">{product?.custom_data.display_price}</span>
+
+        </div>
         {!InCart ? (
           <button className="btn btn-outline-warning" onClick={handleAddToCart}>
             Agregar

@@ -9,7 +9,7 @@ import "./home.css";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const [categories] = useCategories();
+  const [categories] = useCategories(3);
 
   return (
     <div className="home-page">

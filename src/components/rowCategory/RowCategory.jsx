@@ -8,22 +8,23 @@ import { getAllProductsByCategory } from "./../../services/api-shop";
 const RowCategory = ({ category }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    getAllProductsByCategory().then((data) => {
-      setProducts(data);
+    getAllProductsByCategory(category.id).then((resp) => {
+      setProducts(resp.products.data);
+
     });
   }, []);
 
   return (
     <div className="container mt-4">
-      <div className="d-flex justify-content-between">
-        <h2 className="pb-4 ">{category.title}</h2>
-        <Link className="btn" to={`./${category.id}`}>
+      <div className="d-flex justify-content-between p-3">
+        <h2 className="pb-4 ">{category?.name}</h2>
+        <Link className="btn" to={`./${category?.id}`}>
           <span>
             Ver todos <IoIosArrowForward />
           </span>
         </Link>
       </div>
-      <div className="d-flex flex-wrap justify-content-between">
+      <div className="d-flex flex-wrap justify-content-center justify-content-md-start">
         {products?.map((p) => (
           <CardProduct key={p.id} product={p} />
         ))}

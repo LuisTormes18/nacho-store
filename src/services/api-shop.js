@@ -1,62 +1,17 @@
 import instanceAxios from "./axios";
+import { dataprueba } from "./dataprueba";
 
-export const getPrincipalCategories = async () => {
-  return [
-    {
-      id: "0001",
-      title: "Franelas y sueters",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3025_1630344564.jpg",
-    },
-    {
-      id: "0002",
-      title: "Gorras",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3028_1630344543.jpg",
-    },
-    {
-      id: "0003",
-      title: "Accesorios para celulares",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3029_1630344580.jpg",
-    },
-  ];
+export const getAllCategories = async (limit) => {
+  let n = limit ? limit : -1
+  const resp = await instanceAxios.get("categories/all");
+  const data = await resp.data;
+  return data.categories;
+  // return data.categories.slice(0, n);
 };
 
-export const getAllCategories = async () => {
-  const resp = await instanceAxios.get("/categories");
-  console.log(resp);
+export const getAllProductsByCategory = async (id) => {
+  const resp = await instanceAxios.get(`categories/${id}`);
+  const data = await resp.data;
+  return data;
 
-  return resp.data.slice(0, 8);
-};
-export const getCategoryById = async () => {
-  return {
-    id: "0001",
-    title: "Franelas y sueters",
-    url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3025_1630344564.jpg",
-  };
-};
-export const getAllProductsByCategory = async () => {
-  // const resp = await instanceAxios.get("/photos");
-  // return resp.data.slice(0, 8);
-
-  return [
-    {
-      id: "0001",
-      title: "Franelas y sueters",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3025_1630344564.jpg",
-    },
-    {
-      id: "0002",
-      title: "Gorras",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3028_1630344543.jpg",
-    },
-    {
-      id: "0003",
-      title: "Accesorios para celulares",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3029_1630344580.jpg",
-    },
-    {
-      id: "0004",
-      title: "Accesorios para celulares",
-      url: "https://api-dev.dondemand.io/storage/companies/2/category/category_3029_1630344580.jpg",
-    },
-  ];
 };

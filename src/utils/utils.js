@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 export function calculateTotalCartValue(products) {
   const total = products
-    .map((P) => P.price * P.quantity)
+    .map((P) => `${P.min_price_e2}`.split('').slice(0,2).join('') * P.quantity )
     .reduce((acum, price) => {
       acum = acum + price;
       return acum;
