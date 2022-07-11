@@ -9,7 +9,7 @@ const RowCategory = ({ category }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getAllProductsByCategory(category.id).then((resp) => {
-      setProducts(resp.products.data);
+      setProducts(resp.products);
 
     });
   }, []);

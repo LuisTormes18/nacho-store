@@ -13,11 +13,7 @@ export function calculateTotalCartValue(products) {
 export function isProductInCart(id, productsInCart) {
   return productsInCart.map((p) => p.id).includes(id);
 }
-export function getCurrentTime() {
-  let date = new Date();
-  console.log(date);
-  return `${date.getHours()}`;
-}
+
 export const getProductsInCartFromLocalStorage = () => {
   try {
     const currentData =
@@ -54,3 +50,19 @@ export const formatPriceToUsd = (price) => {
 
   return dollarUsd.format(price);
 };
+export const  isInTheHours = (horario)=> {
+  let hora = new Date().getHours();
+  let horaDesde = parseInt(horario?.hour_from.split(':')[0]);
+  let horaHasta = parseInt(horario?.hour_to.split(':')[0]);
+  
+  if( hora >= horaDesde & hora <= horaHasta){
+
+    return true;
+  }
+
+
+  return false;
+
+
+
+}

@@ -10,8 +10,9 @@ const useProducts = (idCategory) => {
   useEffect(() => {
     getAllProductsByCategory(idCategory)
       .then((resp) => {
+        console.log(resp)
         setCategory(resp.category);
-        setProducts(resp.products.data);
+        setProducts(resp.products);
       })
       .catch((err) => {
         setCategory(undefined);

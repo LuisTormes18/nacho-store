@@ -28,7 +28,7 @@ const CardProduct = ({ product }) => {
         <h5 className="card-title">{product?.name}</h5>
         <div className="card-text">
           <p className="text-gray font-size-14px">{product?.details}</p>
-          <span className="">{product?.custom_data.display_price}</span>
+          <span className="text-gray font-size-14px">{product?.custom_data.display_price}</span>
 
         </div>
         {!InCart ? (

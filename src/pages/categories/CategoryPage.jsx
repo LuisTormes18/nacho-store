@@ -1,14 +1,17 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 import useProducts from "./../../hooks/useProducts";
 import CardProduct from "./../../components/cards/CardProduct";
+import useSearch from "./../../hooks/useSearch";
+import SearchBar from "./components/SearchBar";
 
 const CategoryPage = ({}) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [category, products] = useProducts(id);
+  const { results } = useSearch();
 
   function handleReturn() {
     console.log("click");
@@ -21,7 +24,9 @@ const CategoryPage = ({}) => {
   return (
     <div className="container mt-4 p-4 pb-5">
       <Helmet>
-        <title>{ category?.name ? `${category?.name} | Nacho Store` : "..."  }</title>
+        <title>
+          {category?.name ? `${category?.name} | Nacho Store` : "..."}
+        </title>
       </Helmet>
 
       <header>
@@ -31,21 +36,22 @@ const CategoryPage = ({}) => {
           <button className="btn" onClick={handleReturn}>
             <IoIosArrowBack />
           </button>
-          <form className="form-search d-flex align-items-center p-1">
-            <IoIosSearch size="24" />
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar Producto en categoria"
-            />
-          </form>
+          <SearchBar product={products} />
         </div>
       </header>
-      <div className="d-flex flex-wrap justify-content-center pt-3">
-        {products?.map((p) => (
-          <CardProduct key={p.id} product={p} />
-        ))}
-      </div>
+      {results.length === 0 ? (
+        <div className="d-flex flex-wrap justify-content-center pt-3">
+          {products?.map((p) => (
+            <CardProduct key={p.id} product={p} />
+          ))}
+        </div>
+      ) : (
+        <div className="d-flex flex-wrap justify-content-center pt-3">
+          {results?.map((p) => (
+            <CardProduct key={p.id} product={p} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

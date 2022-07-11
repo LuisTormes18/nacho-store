@@ -1,13 +1,15 @@
 import { RowCategory } from "./../../components";
 import { Helmet } from "react-helmet";
-import { IoIosSearch } from "react-icons/io";
 
 import useCategories from "./../../hooks/useCategories";
 
 import "./index.css";
+import SearchBar from "./components/SearchBar";
+import CardProduct from "./../../components/cards/CardProduct";
 
 const CategoriesPage = () => {
   const [categories, filters, filterCategories] = useCategories();
+  const { results } = useSearch();
   return (
     <div className="pb-5">
       <Helmet>
@@ -17,38 +19,43 @@ const CategoriesPage = () => {
       <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
         <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
           <li>
-            <button className="item"
-            onClick={() => {
-              filterCategories("all");
-            }}>
+            <button
+              className="item"
+              onClick={() => {
+                filterCategories("all");
+              }}
+            >
               All
-            </button >
+            </button>
           </li>
           {filters?.map((f) => (
-             <li key={f.id}>
-            <button className="item"
-            onClick={() => {
-              filterCategories(f?.name);
-            }}>
-              {f?.name}
-            </button >
-          </li>
+            <li key={f.id}>
+              <button
+                className="item"
+                onClick={() => {
+                  filterCategories(f?.name);
+                }}
+              >
+                {f?.name}
+              </button>
+            </li>
           ))}
         </ul>
-        <form className="form-search d-flex align-items-center mb-4 mb-sm-0 p-1">
-          <IoIosSearch size="24" />
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Buscar Productos"
-          />
-        </form>
+        <SearchBar />
       </div>
-      <div className="categories">
-        {categories?.map((c) => (
-          <RowCategory key={c.id} category={c} />
-        ))}
-      </div>
+      {results.length === 0 ? (
+        <div className="categories">
+          {categories?.map((c) => (
+            <RowCategory key={c.id} category={c} />
+          ))}
+        </div>
+      ) : (
+        <div className="d-flex flex-wrap justify-content-center pt-3">
+          {results?.map((p) => (
+            <CardProduct key={p.id} product={p} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
