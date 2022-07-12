@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModalOptions } from "../../stateManagement/actions/ui";
 import { formatPriceToUsd } from "./../../utils/utils";
 
-const ProductOptions = ({ product }) => {
+const ProductOptions = () => {
   const [counter, setCounter] = useState(1);
   const { productActive: product } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
