@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import useForm from "../../../../hooks/useForm";
 
 const FormDatosClient = () => {
-  const [state, hanleInputChange] = useForm({ email: "" });
+  const [state, handleInputChange] = useForm({ email: "" });
   const { email } = state;
 
   function handleSubmit(e) {
@@ -18,7 +18,7 @@ const FormDatosClient = () => {
         </label>
         <input
           className="form-control"
-          onChange={hanleInputChange}
+          onChange={handleInputChange}
           type="email"
           name="email"
           value={email}
