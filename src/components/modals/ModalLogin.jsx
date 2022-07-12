@@ -3,35 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 import { closeModalLogin } from "../../stateManagement/actions/auth";
 import Authentication from "../auth/Authentication";
+import { styles_M_Login } from "./stylesModals";
 
 const ModalLogin = ({ children }) => {
   const { modalLoginIsOpen } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const customStyles = {
-    overlay: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.75)",
-    },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      padding: "10px",
-      backgroundColor: "#FFF",
-      border: "none",
-      width: "90%",
-      maxWidth: "400px",
-      minHeight: "250px",
-    },
-  };
   function closeModal() {
     dispatch(closeModalLogin());
   }
@@ -40,7 +17,7 @@ const ModalLogin = ({ children }) => {
       isOpen={modalLoginIsOpen}
       onRequestClose={closeModal}
       ariaHideApp={false}
-      style={customStyles}
+      style={styles_M_Login}
       contentLabel="Login Modal"
     >
       <Authentication />

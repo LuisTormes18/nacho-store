@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-
-import CardProduct from "./../cards/CardProduct";
-import { getAllProductsByCategory } from "./../../services/api-shop";
+import CardProduct from "./../../../components/cards/CardProduct";
+import { getAllProductsByCategory } from "../../../services/api-shop";
 
 const RowCategory = ({ category }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getAllProductsByCategory(category.id).then((resp) => {
       setProducts(resp.products);
-
     });
   }, []);
 

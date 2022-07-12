@@ -12,3 +12,15 @@ export const openCinta = () => {
     payload: null,
   };
 };
+export const openModalOptions = (product) => {
+  return {
+    type: types.openModalOptions,
+    payload: product,
+  };
+};
+export const closeModalOptions = () => {
+  return {
+    type: types.closedModalOptions,
+    payload: null,
+  };
+};

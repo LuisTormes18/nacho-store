@@ -20,4 +20,6 @@ export const types = {
   // UI
   showCinta: "[UI] Open Cinta",
   hiddenCinta: "[UI] closed Cinta",
+  openModalOptions: "[UI] Open Modal Options",
+  closedModalOptions: "[UI] closed Modal Options",
 };

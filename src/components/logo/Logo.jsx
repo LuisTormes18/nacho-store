@@ -1,11 +1,10 @@
-
 const Logo = () => {
-	return (
-		 <img
-            className="logo img-fluid"
-            src="https://api-dev.dondemand.io/storage/companies/69/branch/branch_logo_27_1634837310.jpg"
-         />
-	)
-}
+  return (
+    <img
+      className="logo img-fluid"
+      src="https://shopsqa.lukapay.io/static/nachoLogoG-144ac61f9c3fe85097f152cd0e0128c9.jpg"
+    />
+  );
+};
 
-export default Logo
+export default Logo;

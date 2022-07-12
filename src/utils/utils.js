@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 export function calculateTotalCartValue(products) {
   const total = products
-    .map((P) => `${P.min_price_e2}`.split('').slice(0,2).join('') * P.quantity )
+    .map((P) => `${P.min_price_e2}`.split("").slice(0, 2).join("") * P.quantity)
     .reduce((acum, price) => {
       acum = acum + price;
       return acum;
@@ -50,19 +50,14 @@ export const formatPriceToUsd = (price) => {
 
   return dollarUsd.format(price);
 };
-export const  isInTheHours = (horario)=> {
+export const isInTheHours = (horario) => {
   let hora = new Date().getHours();
-  let horaDesde = parseInt(horario?.hour_from.split(':')[0]);
-  let horaHasta = parseInt(horario?.hour_to.split(':')[0]);
-  
-  if( hora >= horaDesde & hora <= horaHasta){
+  let horaDesde = parseInt(horario?.hour_from.split(":")[0]);
+  let horaHasta = parseInt(horario?.hour_to.split(":")[0]);
 
+  if ((hora >= horaDesde) & (hora <= horaHasta)) {
     return true;
   }
 
-
   return false;
-
-
-
-}
+};

@@ -1,15 +1,28 @@
-import { RowCategory } from "./../../components";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { IoIosSearch } from "react-icons/io";
 
 import useCategories from "./../../hooks/useCategories";
+import useForm from "./../../hooks/useForm";
+import CardProduct from "./../../components/cards/CardProduct";
+import { getProductsBySearch } from "../../services/api-shop";
+import RowCategory from "./components/RowCategory";
 
 import "./index.css";
-import SearchBar from "./components/SearchBar";
-import CardProduct from "./../../components/cards/CardProduct";
 
 const CategoriesPage = () => {
   const [categories, filters, filterCategories] = useCategories();
-  const { results } = useSearch();
+  const [results, setResults] = useState([]);
+  const [state, hanledInputChange] = useForm({ search: "" });
+  let { search } = state;
+
+  useEffect(() => {
+    getProductsBySearch(search).then((resp) => {
+      console.log("resp", resp);
+      setResults(resp.result);
+    });
+  }, [search]);
+
   return (
     <div className="pb-5">
       <Helmet>
@@ -18,16 +31,6 @@ const CategoriesPage = () => {
 
       <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
         <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
-          <li>
-            <button
-              className="item"
-              onClick={() => {
-                filterCategories("all");
-              }}
-            >
-              All
-            </button>
-          </li>
           {filters?.map((f) => (
             <li key={f.id}>
               <button
@@ -41,7 +44,17 @@ const CategoriesPage = () => {
             </li>
           ))}
         </ul>
-        <SearchBar />
+        <form className="form-search d-flex align-items-center mb-4 mb-sm-0 p-1">
+          <IoIosSearch size="24" />
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Buscar Productos"
+            value={search}
+            name="search"
+            onChange={hanledInputChange}
+          />
+        </form>
       </div>
       {results.length === 0 ? (
         <div className="categories">

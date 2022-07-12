@@ -7,7 +7,7 @@ const useSearch = (products = null) => {
   useEffect(() => {
     console.log(search);
 
-    if (products) {
+    if (!!products) {
       products.filter((product) => product.name.includes(search));
       return;
     }

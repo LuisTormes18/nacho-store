@@ -2,6 +2,8 @@ import { types } from "./../types/types";
 
 const initialState = {
   isVisibilityCinta: null,
+  modalOptionsIsOpen: false,
+  productActive: {},
 };
 export const uiReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,6 +16,18 @@ export const uiReducer = (state = initialState, action) => {
       return {
         ...state,
         isVisibilityCinta: false,
+      };
+    case types.openModalOptions:
+      return {
+        ...state,
+        productActive: action.payload,
+        modalOptionsIsOpen: true,
+      };
+
+    case types.closedModalOptions:
+      return {
+        ...state,
+        modalOptionsIsOpen: false,
       };
     default:
       return initialState;

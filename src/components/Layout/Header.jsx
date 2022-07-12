@@ -34,7 +34,7 @@ const Header = () => {
     <header className="header">
       <div className="container p-2 d-flex justify-content-between align-items-center">
         <Link to="/">
-         <Logo />
+          <Logo />
         </Link>
         <div className="header-nav d-flex align-items-center">
           {!user ? (

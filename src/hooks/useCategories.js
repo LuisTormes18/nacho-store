@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  getAllCategories,
-} from "./../services/api-shop";
+import { getAllCategories } from "./../services/api-shop";
 
-const useCategories = (limit=null) => {
+const useCategories = (limit = null) => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -13,9 +11,10 @@ const useCategories = (limit=null) => {
     });
   }, []);
   function filterCategories(filter) {
-    if (filter === "all") {
+    if (filter === "All") {
       setCategories(data);
-      return;    }
+      return;
+    }
     const filterC = data.filter((category) => category.name === filter);
     setCategories(filterC);
 

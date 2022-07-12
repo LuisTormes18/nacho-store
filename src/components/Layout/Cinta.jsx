@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { isInTheHours } from "./../../utils/utils";
 import { closedCinta, openCinta } from "./../../stateManagement/actions/ui";
-import { getHorario } from './../../services/api-shop';
+import { getHorario } from "./../../services/api-shop";
 
 const Cinta = () => {
   const {
@@ -13,16 +13,15 @@ const Cinta = () => {
   const [horario, setHorario] = useState(null);
 
   useEffect(() => {
-    getHorario().then(hour=>{
+    getHorario().then((hour) => {
       setHorario(hour);
-
     });
-      if (isInTheHours(horario)) {
-    dispatch(openCinta());
+    if (isInTheHours(horario)) {
+      dispatch(openCinta());
       return;
     }
     // si no se cumple la condicion de arriba no se muestra la cinta superior
-      dispatch(closedCinta());
+    dispatch(closedCinta());
   }, []);
 
   if (!isVisibilityCinta) {
