@@ -2,6 +2,7 @@ export const types = {
   // Auth
   initLogin: "[Auth] Init Login",
   finishLogin: "[Auth] User Authenticated",
+  loginError: "[Auth] Error Login",
   openModalLogin: "[UI] Open Modal Login",
   closedModalLogin: "[UI] closed Modal Login",
   logout: "[Auth] User Logout",

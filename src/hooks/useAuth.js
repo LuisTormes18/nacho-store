@@ -8,6 +8,7 @@ const useAuth = () => {
   function handleLogout() {
     dispatch(logout());
   }
+
   return { user, handleLogout };
 };
 

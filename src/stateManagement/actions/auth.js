@@ -1,8 +1,20 @@
 import { setUserLocalStorage } from "./../../utils/utils";
 import { types } from "./../types/types";
+
+import { setLogin } from "./../../services/auth";
 export const startLoginWhitEmailAndCode = (state) => {
-  // logica el login
-  return login({ ui: 1, name: "Juan Rivera", email: "juancho_r@gmail.com" });
+  console.log("login", state);
+
+  return async (dispatch) => {
+    const user = await setLogin(state);
+
+    if (!!user) {
+      dispatch(initLogin());
+    }
+    if (!user) {
+      dispatch(loginError());
+    }
+  };
 };
 
 export const openModalLogin = () => {
@@ -17,7 +29,18 @@ export const closeModalLogin = () => {
     payload: null,
   };
 };
-
+export const loginError = () => {
+  return {
+    type: types.loginError,
+    payload: null,
+  };
+};
+export const initLogin = (user) => {
+  return {
+    type: types.initLogin,
+    payload: user,
+  };
+};
 export const login = (user) => {
   setUserLocalStorage(user);
   return {
@@ -25,6 +48,7 @@ export const login = (user) => {
     payload: user,
   };
 };
+
 export const logout = () => {
   setUserLocalStorage(null);
   return {
