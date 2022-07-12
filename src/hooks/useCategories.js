@@ -11,7 +11,7 @@ const useCategories = (limit = null) => {
     });
   }, []);
   function filterCategories(filter) {
-    if (filter === "All") {
+    if (filter === "all") {
       setCategories(data);
       return;
     }

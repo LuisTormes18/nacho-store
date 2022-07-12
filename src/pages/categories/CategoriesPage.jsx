@@ -31,6 +31,16 @@ const CategoriesPage = () => {
 
       <div className="categories-nav container d-flex flex-column-reverse flex-sm-row align-items-center justify-content-between align-items-sm-start ">
         <ul className="categories-nav-filters d-flex  justify-content-center justify-content-sm-start flex-wrap">
+          <li key="all">
+            <button
+              className="item"
+              onClick={() => {
+                filterCategories("all");
+              }}
+            >
+              All
+            </button>
+          </li>
           {filters?.map((f) => (
             <li key={f.id}>
               <button
