@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import useForm from "./../../hooks/useForm";
+import { sendCode } from "./../../services/auth";
 import { login } from "./../../stateManagement/actions/auth";
 
 import "./auth.css";
@@ -24,7 +25,7 @@ const EnterCode = ({ setExistUser }) => {
     const data = await sendCode(code);
 
     if (data.ok) {
-      dispatch(login(user));
+      dispatch(login(data.user));
       setExistUser(null);
     }
   }
@@ -33,7 +34,7 @@ const EnterCode = ({ setExistUser }) => {
     <div>
       <h3 className="text-center pt-4"> Ingresa tu cuenta </h3>
 
-      <form className="from cols-2 g-3" onSubmit={handleSubmit}>
+      <form className="from  row cols-2 g-3" onSubmit={handleSubmit}>
         <div className="col-12 d-flex gap-3 pb-4 pt-4">
           <input
             className="form-control"

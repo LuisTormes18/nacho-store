@@ -55,7 +55,8 @@ export const isInTheHours = (horario) => {
   let horaDesde = parseInt(horario?.hour_from.split(":")[0]);
   let horaHasta = parseInt(horario?.hour_to.split(":")[0]);
 
-  if ((hora >= horaDesde) & (hora <= horaHasta)) {
+
+  if ((hora >= horaDesde) && (hora <= horaHasta)) {
     return true;
   }
 

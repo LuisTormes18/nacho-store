@@ -39,6 +39,7 @@ const ProfilePage = () => {
                 <div>
                   <h3>{user.name}</h3>
                   <p>{user.email}</p>
+                  <p>{user.phone}</p>
                 </div>
                 <div className="font-size-14px">Editar</div>
               </div>
