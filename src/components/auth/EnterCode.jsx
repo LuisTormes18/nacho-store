@@ -13,7 +13,9 @@ const EnterCode = ({ setExistUser }) => {
     pin4: "",
   });
   const { pin1, pin2, pin3, pin4 } = state;
-
+  function handleReturn() {
+    setExistUser(null);
+  }
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -31,8 +33,8 @@ const EnterCode = ({ setExistUser }) => {
     <div>
       <h3 className="text-center pt-4"> Ingresa tu cuenta </h3>
 
-      <form className="from " onSubmit={handleSubmit}>
-        <div className="d-flex gap-3 pb-4 pt-4">
+      <form className="from cols-2 g-3" onSubmit={handleSubmit}>
+        <div className="col-12 d-flex gap-3 pb-4 pt-4">
           <input
             className="form-control"
             onChange={hanleInputChange}
@@ -70,13 +72,17 @@ const EnterCode = ({ setExistUser }) => {
             value={pin4}
           />
         </div>
+        <div className="col-6 form-group mb-5">
+          <button
+            className="btn btn-outline-warning w-100"
+            onClick={handleReturn}
+          >
+            Volver
+          </button>
+        </div>
 
-        <div className="form-group mb-5">
-          <input
-            type="submit"
-            className="btn btn-warning w-100"
-            value="Enviar Codigo"
-          />
+        <div className="col-6 form-group mb-5">
+          <input type="submit" className="btn w-100" value="Enviar Codigo" />
         </div>
       </form>
     </div>

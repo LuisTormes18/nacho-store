@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModalOptions } from "../../stateManagement/actions/ui";
+import { addProdutToCart } from "./../../stateManagement/actions/shoppinCart";
 import { formatPriceToUsd } from "./../../utils/utils";
 
 const ProductOptions = () => {

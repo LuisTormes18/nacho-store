@@ -23,7 +23,9 @@ const FormRegister = ({ setExistUser }) => {
     }
     setExistUser(ok);
   }
-
+  function handleReturn() {
+    setExistUser(null);
+  }
   return (
     <div className="p-1 ">
       <h3 className="text-center pt-2"> Crear cuenta </h3>
@@ -81,11 +83,12 @@ const FormRegister = ({ setExistUser }) => {
           </div>
         )}
         <div className="form-group col-6">
-          <input
-            type="submit"
+          <button
             className="btn btn-outline-warning w-100"
-            value="volver"
-          />
+            onClick={handleReturn}
+          >
+            Volver
+          </button>
         </div>
         <div className="form-group col-6">
           <input
