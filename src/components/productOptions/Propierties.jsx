@@ -26,7 +26,7 @@ const properties = ({ properties }) => {
         <div className="d-flex justify-content-between">
           <div>
             <input
-              className="ps-2"
+              className="m-1"
               key={`${colorData[i].property_id}`}
               type="radio"
               id={`colorChoice${value}`}
@@ -35,7 +35,7 @@ const properties = ({ properties }) => {
               checked={color == value ? true : false}
               onChange={changeColor}
             />
-            <label for={`colorChoice${value}`}>{colorData[i].name}</label>
+            <label>{colorData[i].name}</label>
           </div>
           <span>
             {formatPriceToUsd(`${colorData[i].price_e2}`.slice(0, 2))}
@@ -56,6 +56,7 @@ const properties = ({ properties }) => {
         argSizes.push(
           <div>
             <input
+              className="m-1"
               key={`${sizesData[i].property_id}`}
               type="radio"
               id={`sizesChoice${value}`}

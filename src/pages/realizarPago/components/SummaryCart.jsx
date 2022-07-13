@@ -17,7 +17,9 @@ const SummaryCart = () => {
             handleDelete={handleDelete}
           />
         ))}
-        <TotalCartValue />
+        <TotalCartValue text="subtotal" />
+        <hr />
+        <TotalCartValue size="20px" />
       </div>
     </div>
   );

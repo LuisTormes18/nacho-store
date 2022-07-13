@@ -100,6 +100,16 @@ const FormEncomienda = () => {
             </label>
           </div>
         </div>
+        <div className="col-12">
+          <p className="font-size-14px">
+            <b>Importante. </b>
+            El envío es cobrado en destino. Los productos salen de Caracas,
+            Venezuela, y pueden tardar entre 5 y 15 dias hábiles en llegar
+            dependiendo de su destino. Tome en cuenta que este proceso puede
+            retrasarse por cierres temporales de frontera motivados por el
+            COVID.
+          </p>
+        </div>
       </form>
     </div>
   );

@@ -14,7 +14,7 @@ const CartItem = ({
     <div className="product-item d-flex align-items-center justify-content-between ps-1 pe-1">
       <div className="d-flex">
         <img
-          className="img me-3"
+          className="img-fluid img me-3"
           src={product.vertical_picture_urls[0]}
           alt=""
         />

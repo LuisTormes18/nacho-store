@@ -3,12 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Helmet } from "react-helmet";
 import { IoIosArrowBack } from "react-icons/io";
-import {
-  FormDatosClient,
-  NavTabDeliveryType,
-  NavTabPayment,
-  SummaryCart,
-} from "./components";
+import Authentication from "../../components/auth/Authentication";
+import { NavTabDeliveryType, NavTabPayment, SummaryCart } from "./components";
 
 import "./style.css";
 
@@ -34,7 +30,7 @@ const RealizarPagoPage = () => {
             </button>
             <h3 className="linea-bottom-gray">Tus datos</h3>
             {!user ? (
-              <FormDatosClient />
+              <Authentication />
             ) : (
               <div>
                 <h3>{user.name}</h3>
