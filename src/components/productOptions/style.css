@@ -1,0 +1,10 @@
+.options_content {
+  overflow-x: hidden;
+}
+.image {
+  /*background-color: red;*/
+  width: 100%;
+}
+.image img {
+  width: 100%;
+}

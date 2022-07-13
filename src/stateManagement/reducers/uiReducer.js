@@ -1,7 +1,7 @@
 import { types } from "./../types/types";
 
 const initialState = {
-  isVisibilityCinta: null,
+  isVisibilityCinta: false,
   modalOptionsIsOpen: false,
   productActive: {},
 };

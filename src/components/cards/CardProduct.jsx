@@ -6,6 +6,8 @@ import ButtonsChangeQuantity from "./ButtonsQuantity/ButtonsChangeQuantity";
 import { formatPriceToUsd, isProductInCart } from "../../utils/utils";
 import ModalProductOptions from "./../modals/ModalProductOptions";
 
+import "./cards.css";
+
 const CardProduct = ({ product }) => {
   const [InCart, setInCart] = useState(false);
   const {

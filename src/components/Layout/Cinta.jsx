@@ -16,12 +16,11 @@ const Cinta = () => {
     getHorario().then((hour) => {
       setHorario(hour);
     });
-    if (isInTheHours(horario)) {
+    if (!isInTheHours(horario)) {
       dispatch(openCinta());
       return;
     }
     // si no se cumple la condicion de arriba no se muestra la cinta superior
-    dispatch(closedCinta());
   }, []);
 
   if (!isVisibilityCinta) {
