@@ -13,7 +13,7 @@
 .logo {
   max-width: 274px;
   max-height: 60px;
-  background-color: red;
+  background-color: var(--ligth-gray);
   object-fit: cover;
   object-position: center;
   /*padding: 20px;*/
