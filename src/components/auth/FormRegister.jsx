@@ -1,27 +1,34 @@
-import { useDispatch } from "react-redux";
+import { useState } from "react";
 import useForm from "./../../hooks/useForm";
-import { startLoginWhitEmailAndCode } from "./../../stateManagement/actions/auth";
+import { sendRegister } from "./../../services/auth";
+
 import "./auth.css";
 
-const FormRegister = () => {
-  const dispatch = useDispatch();
+const FormRegister = ({ setExistUser }) => {
+  const [messageError, setMessageError] = useState(null);
   const [state, hanleInputChange] = useForm({
     name: "",
     lastName: "",
     email: "",
+    phone: "",
   });
-  const { name, lastName, email } = state;
+  const { name, lastName, phone, email } = state;
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    dispatch(startLoginWhitEmailAndCode(state));
+    const ok = await sendRegister(state);
+    if (!ok) {
+      setMessageError("Ha Ocurrido un error");
+      return;
+    }
+    setExistUser(ok);
   }
 
   return (
-    <div className="p-4">
+    <div className="p-1 ">
       <h3 className="text-center pt-2"> Crear cuenta </h3>
 
-      <form className="from row cols-2 g-3 w-100" onSubmit={handleSubmit}>
+      <form className="from row cols-2 g-3" onSubmit={handleSubmit}>
         <div className="form-group  col-6">
           <label className="form-label">Nombre</label>
           <input
@@ -43,6 +50,16 @@ const FormRegister = () => {
           />
         </div>
         <div className="form-group col-12">
+          <label className="form-label">Telefono</label>
+          <input
+            className="form-control"
+            onChange={hanleInputChange}
+            type="text"
+            name="phone"
+            value={phone}
+          />
+        </div>
+        <div className="form-group col-12">
           <input
             className="form-control"
             onChange={hanleInputChange}
@@ -58,6 +75,11 @@ const FormRegister = () => {
             guardar direccion
           </label>
         </div>
+        {messageError && (
+          <div className="messageErrorcol-12">
+            <p>{messageError}</p>
+          </div>
+        )}
         <div className="form-group col-6">
           <input
             type="submit"

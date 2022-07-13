@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 
 import FormLogin from "./FormLogin";
 import FormRegister from "./FormRegister";
+import EnterCode from "./EnterCode";
 
 const Authentication = () => {
-  const { existUserInDb } = useSelector((state) => state.auth);
+  const [existUser, setExistUser] = useState(null);
 
-  if (existUserInDb) {
-    return <div>Enter code</div>;
+  if (existUser) {
+    return <EnterCode setExistUser={setExistUser} />;
   }
-  if (existUserInDb === undefined) {
-    return <FormRegister />;
+  if (existUser === undefined) {
+    return <FormRegister setExistUser={setExistUser} />;
   }
-  return <FormLogin />;
+  return <FormLogin setExistUser={setExistUser} />;
 };
 
 export default Authentication;

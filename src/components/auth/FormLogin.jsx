@@ -1,17 +1,22 @@
 import { useDispatch } from "react-redux";
 import useForm from "./../../hooks/useForm";
-import { startLoginWhitEmailAndCode } from "./../../stateManagement/actions/auth";
+import { sendEmail } from "./../../services/auth";
 
 import "./auth.css";
 
-const FormLogin = () => {
+const FormLogin = ({ setExistUser }) => {
   const dispatch = useDispatch();
   const [state, hanleInputChange] = useForm({ email: "" });
   const { email } = state;
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    dispatch(startLoginWhitEmailAndCode(state));
+    const existUser = await sendEmail(state);
+    if (!existUser) {
+      setExistUser(undefined);
+      return;
+    }
+    setExistUser(existUser);
   }
 
   return (

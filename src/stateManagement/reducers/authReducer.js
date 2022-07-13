@@ -3,7 +3,6 @@ import { types } from "./../types/types";
 const initialSate = {
   user: getUserFromLocalStorage(),
   modalLoginIsOpen: false,
-  existUserInDb: null,
 };
 export const authReducer = (state = initialSate, action) => {
   switch (action.type) {
@@ -15,30 +14,21 @@ export const authReducer = (state = initialSate, action) => {
         ...state,
         modalLoginIsOpen: false,
       };
-    case types.loginError:
-      return {
-        ...state,
-        modalLoginIsOpen: true,
-        existUserInDb: undefined,
-      };
 
-    case types.initLogin:
+    case types.login:
       return {
         ...state,
-        user: null,
-        modalLoginIsOpen: true,
-        existUserInDb: true,
-      };
-    case types.finishLogin:
-      return {
-        ...state,
-        user: { uid: action.payload.uid, name: action.payload.name },
+        user: { uid: action.payload.id, ...action.payload },
         modalLoginIsOpen: false,
         existUserInDb: null,
       };
     case types.logout:
       return { ...state, user: null };
-
+    case types.loginError:
+      return {
+        ...state,
+        modalLoginIsOpen: true,
+      };
     default:
       return state;
   }

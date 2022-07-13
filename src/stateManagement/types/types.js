@@ -1,11 +1,10 @@
 export const types = {
   // Auth
-  initLogin: "[Auth] Init Login",
-  finishLogin: "[Auth] User Authenticated",
+  login: "[Auth] User Authenticated",
+  logout: "[Auth] User Logout",
   loginError: "[Auth] Error Login",
   openModalLogin: "[UI] Open Modal Login",
   closedModalLogin: "[UI] closed Modal Login",
-  logout: "[Auth] User Logout",
 
   // Cart
   addProductToCart: "[Cart] Add new product",
