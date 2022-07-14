@@ -15,11 +15,12 @@ const Cinta = () => {
   useEffect(() => {
     getHorario().then((hour) => {
       setHorario(hour);
+
+      if (!isInTheHours(hour)) {
+        dispatch(openCinta());
+      }
     });
-    if (!isInTheHours(horario)) {
-      dispatch(openCinta());
-      return;
-    }
+
     // si no se cumple la condicion de arriba no se muestra la cinta superior
   }, []);
 
