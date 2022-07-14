@@ -16,7 +16,7 @@ const CategoryPage = ({}) => {
   let { search } = state;
 
   useEffect(() => {
-    setResults(products.filter((product) => product.name.includes(search)));
+    setResults(products.filter((product) => product.name.toLowerCase().includes(search.toLowerCase())));
   }, [search]);
   function handleReturn() {
     console.log("click");
