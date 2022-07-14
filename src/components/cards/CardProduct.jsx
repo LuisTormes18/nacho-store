@@ -33,13 +33,13 @@ const CardProduct = ({ product }) => {
   }
 
   return (
-    <div className="card card-product text-center">
+    <div className="card card-product text-center ">
       <img
         src={product.picture_urls[0]}
         className="card-img-top"
         alt={product?.name}
       />
-      <div className="card-body">
+      <div className="card-body d-flex flex-column align-items-center">
         <h5 className="card-title">{product?.name}</h5>
         <div className="card-text">
           <p className="text-gray font-size-14px">{product?.details}</p>

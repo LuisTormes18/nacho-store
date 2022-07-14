@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { formatPriceToUsd } from "./../../utils/utils";
+import ColorOption from "./ColorOption";
+import SizeOption from "./SizeOption";
 
-const properties = ({ properties }) => {
+const properties = ({ properties, setTotalPrice }) => {
   const [color, setColor] = useState(0);
   const [size, setSize] = useState(0);
   useEffect(() => {
@@ -10,9 +12,7 @@ const properties = ({ properties }) => {
   useEffect(() => {
     console.log(size);
   }, [size]);
-  function changeColor(e) {
-    setColor(e.target.value);
-  }
+
   function changeSize(e) {
     setSize(e.target.value);
   }
@@ -23,24 +23,13 @@ const properties = ({ properties }) => {
     for (let i = 0; i < colorData.length; i++) {
       let value = i + 1;
       argColors.push(
-        <div className="d-flex justify-content-between">
-          <div>
-            <input
-              className="m-1"
-              key={`${colorData[i].property_id}`}
-              type="radio"
-              id={`colorChoice${value}`}
-              name={colorData[i].name}
-              value={value}
-              checked={color == value ? true : false}
-              onChange={changeColor}
-            />
-            <label>{colorData[i].name}</label>
-          </div>
-          <span>
-            {formatPriceToUsd(`${colorData[i].price_e2}`.slice(0, 2))}
-          </span>
-        </div>
+        <ColorOption
+          value={value}
+          colorOption={colorData[i]}
+          selectColor={color}
+          setColor={setColor}
+          setTotalPrice={setTotalPrice}
+        />
       );
     }
 
@@ -54,19 +43,12 @@ const properties = ({ properties }) => {
       for (let i = 0; i < sizesData.length; i++) {
         let value = i + 1;
         argSizes.push(
-          <div>
-            <input
-              className="m-1"
-              key={`${sizesData[i].property_id}`}
-              type="radio"
-              id={`sizesChoice${value}`}
-              name={sizesData[i].name}
-              value={value}
-              checked={size == value ? true : false}
-              onChange={changeSize}
-            />
-            <label for={`sizesChoice${value}`}>{sizesData[i].name}</label>
-          </div>
+          <SizeOption
+            value={value}
+            sizeOption={sizesData[i]}
+            selectSize={size}
+            changeSize={changeSize}
+          />
         );
       }
     } catch (err) {

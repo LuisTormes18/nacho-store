@@ -24,3 +24,6 @@
 .card-title {
   font-size: 16px !important;
 }
+.card-text {
+  flex: 1 1 auto;
+}

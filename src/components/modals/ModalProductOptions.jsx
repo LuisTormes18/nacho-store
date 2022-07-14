@@ -7,7 +7,7 @@ import ProductOptions from "../productOptions/ProductOptions";
 
 import "./modals.css";
 
-const ModalProductOptions = () => {
+const ModalProductOptions = ({ product }) => {
   const { modalOptionsIsOpen } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
 

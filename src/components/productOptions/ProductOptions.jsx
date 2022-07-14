@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModalOptions } from "../../stateManagement/actions/ui";
 import { addProdutToCart } from "./../../stateManagement/actions/shoppinCart";
@@ -10,6 +10,7 @@ import "./style.css";
 const ProductOptions = () => {
   const [counter, setCounter] = useState(1);
   const { productActive: product } = useSelector((state) => state.ui);
+  const [totalPrice, setTotalPrice] = useState(0);
   const dispatch = useDispatch();
 
   function handleIncrement() {
@@ -22,6 +23,9 @@ const ProductOptions = () => {
     dispatch(addProdutToCart({ ...product, quantity: counter }));
     dispatch(closeModalOptions());
   }
+  useEffect(() => {
+    setTotalPrice(`${product.min_price_e2}`.slice(0, 2) * counter);
+  }, [counter]);
   return (
     <div className="options_content">
       <div className="row cols-2 justify-content-center justify-content-md-start">
@@ -41,7 +45,10 @@ const ProductOptions = () => {
           </header>
           <hr />
 
-          <Propierties properties={product.properties} />
+          <Propierties
+            properties={product.properties}
+            setTotalPrice={setTotalPrice}
+          />
           <footer className="p-3 d-flex justify-content-between">
             <div className="d-flex gap-2">
               <div>
@@ -67,11 +74,7 @@ const ProductOptions = () => {
                 Agregar
               </button>
             </div>
-            <div>
-              {formatPriceToUsd(
-                `${product.min_price_e2}`.slice(0, 2) * counter
-              )}
-            </div>
+            <div>{formatPriceToUsd(totalPrice)}</div>
           </footer>
         </div>
       </div>

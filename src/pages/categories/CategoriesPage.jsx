@@ -17,10 +17,11 @@ const CategoriesPage = () => {
   let { search } = state;
 
   useEffect(() => {
-    getProductsBySearch(search).then((resp) => {
-      console.log("resp", resp);
-      setResults(resp.result);
-    });
+    if (search !== "") {
+      getProductsBySearch(search).then((resp) => {
+        setResults(resp.result);
+      });
+    }
   }, [search]);
 
   return (
