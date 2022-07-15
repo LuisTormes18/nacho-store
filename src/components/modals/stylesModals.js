@@ -57,7 +57,7 @@ const styles_M_Cart = {
     right: 0,
     bottom: 0,
     backgroundColor: "rgba(0, 0, 0, 0.3)",
-    zIndex: "5000",
+    zIndex: "5000000000",
   },
   content: {
     top: "80px",
@@ -68,6 +68,7 @@ const styles_M_Cart = {
     border: "none",
     borderRadius: "8px",
     width: "340px",
+    maxWidth: "90%",
     height: "450px",
   },
 };

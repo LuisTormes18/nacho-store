@@ -6,6 +6,7 @@
   border: none;
   border-radius: 8px;
   background-color: #fff;
+  /*max-width: 100px;*/
 }
 .cart__body {
   min-height: 180px;

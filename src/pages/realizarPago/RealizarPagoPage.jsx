@@ -4,7 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Helmet } from "react-helmet";
 import { IoIosArrowBack } from "react-icons/io";
 import Authentication from "../../components/auth/Authentication";
-import { NavTabDeliveryType, NavTabPayment, SummaryCart, FormDatosClient, } from "./components";
+import {
+  NavTabDeliveryType,
+  NavTabPayment,
+  SummaryCart,
+  FormDatosClient,
+} from "./components";
 
 import "./style.css";
 

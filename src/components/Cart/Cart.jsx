@@ -4,6 +4,7 @@ import useCart from "./../../hooks/useCart";
 import CartItem from "./CartItem";
 import TotalCartValue from "./TotalCartValue";
 import { closeModalCart } from "./../../stateManagement/actions/shoppinCart";
+import { AiOutlineClose } from "react-icons/ai";
 
 import "./cart.css";
 
@@ -24,8 +25,14 @@ const Cart = ({}) => {
 
   return (
     <div className="h-100 cart">
-      <header className="p-3 pb-0">
+      <header className="p-3 pb-0  d-flex justify-content-between align-items-start">
         <h4 className="text-bold">Tienes {productsInCart.length} producto</h4>
+        <AiOutlineClose
+          className="pointer"
+          size="15"
+          color="#000"
+          onClick={handleCloseModal}
+        />
       </header>
       <hr />
       {/*Lista de productos en el carrito*/}
