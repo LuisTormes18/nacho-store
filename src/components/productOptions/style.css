@@ -1,6 +1,8 @@
 .options_content {
   overflow-x: hidden;
+  /*overflow-y: scroll ;*/
 }
+
 .image {
   /*background-color: red;*/
   width: 100%;
@@ -8,3 +10,10 @@
 .image img {
   width: 100%;
 }
+/*.::-webkit-scrollbar {*/
+/* display: none; 
+  /* margin: 5px; */
+/*background-color: var(--light-gray);*/
+/*width: 8px;*/
+/* visibility: hidden; */
+/*}*/

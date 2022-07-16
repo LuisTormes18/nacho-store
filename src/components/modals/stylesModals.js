@@ -1,6 +1,7 @@
 const styles_M_Options = {
   overlay: {
     position: "fixed",
+    paddingTop: "100px",
     top: 0,
     left: 0,
     right: 0,
@@ -20,8 +21,9 @@ const styles_M_Options = {
     width: "90%",
     maxWidth: "900px",
     minHeight: "450px",
-    maxHeight: "700px",
+    maxHeight: "600px",
     padding: "0px",
+    // overflow:"hidden",
   },
 };
 const styles_M_Login = {
