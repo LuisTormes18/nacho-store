@@ -24,6 +24,7 @@ const properties = ({ properties, setTotalPrice }) => {
       let value = i + 1;
       argColors.push(
         <ColorOption
+          key={colorData[i].property_id}
           value={value}
           colorOption={colorData[i]}
           selectColor={color}
@@ -44,6 +45,7 @@ const properties = ({ properties, setTotalPrice }) => {
         let value = i + 1;
         argSizes.push(
           <SizeOption
+            key={sizesData[i].property_id}
             value={value}
             sizeOption={sizesData[i]}
             selectSize={size}
@@ -60,7 +62,7 @@ const properties = ({ properties, setTotalPrice }) => {
   return (
     <div className="p-3">
       {properties.map((pro) => (
-        <div className="">
+        <div key={pro.id} className="">
           <h5 className="card-title">{pro.name}</h5>
 
           {pro.name.includes("Talla") && sizes(pro.property_options)}

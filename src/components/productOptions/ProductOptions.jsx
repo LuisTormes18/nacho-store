@@ -26,6 +26,8 @@ const ProductOptions = () => {
   useEffect(() => {
     setTotalPrice(`${product.min_price_e2}`.slice(0, 2) * counter);
   }, [counter]);
+
+  console.log(product);
   return (
     <div className="options_content">
       <div className="row cols-2 justify-content-center justify-content-md-start">

@@ -23,7 +23,6 @@ const ColorOption = ({
       <div>
         <input
           className="m-1"
-          key={`${colorOption?.property_id}`}
           type="radio"
           id={`colorChoice${value}`}
           name={colorOption?.name}

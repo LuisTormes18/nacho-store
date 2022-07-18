@@ -5,7 +5,6 @@ const SizeOption = ({ value, sizeOption, selectSize, changeSize }) => {
     <div>
       <input
         className="m-1"
-        key={`${sizeOption.property_id}`}
         type="radio"
         id={`sizesChoice${value}`}
         name={sizeOption.name}
