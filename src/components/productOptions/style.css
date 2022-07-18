@@ -10,6 +10,9 @@
 .image img {
   width: 100%;
 }
+.image .img-mobile {
+  max-width: 100px;
+}
 /*.::-webkit-scrollbar {*/
 /* display: none; 
   /* margin: 5px; */
@@ -17,3 +20,6 @@
 /*width: 8px;*/
 /* visibility: hidden; */
 /*}*/
+picture {
+  padding: 0 !important;
+}

@@ -32,8 +32,9 @@ const ProductOptions = () => {
         <div className="left row col-12 col-md-5">
           <picture className="image">
             <source
+              className="img-fluid"
               srcset={`${product?.picture_urls[0]}`}
-              media={`(max-width:759px)`}
+              media={`(max-width:767px)`}
             />
             <img
               className="img-fluid"
@@ -52,8 +53,8 @@ const ProductOptions = () => {
             properties={product.properties}
             setTotalPrice={setTotalPrice}
           />
-          <footer className="p-3 d-flex justify-content-between flex-wrap">
-            <div className="d-flex gap-2">
+          <footer className="p-3 d-flex justify-content-between align-items-center flex-wrap">
+            <div className="d-flex gap-2 pt-3">
               <div>
                 <button
                   className="btn btn-outline-warning"
@@ -77,7 +78,7 @@ const ProductOptions = () => {
                 Agregar
               </button>
             </div>
-            <div className=" ">{formatPriceToUsd(totalPrice)}</div>
+            <div className="pt-3">{formatPriceToUsd(totalPrice)}</div>
           </footer>
         </div>
       </div>

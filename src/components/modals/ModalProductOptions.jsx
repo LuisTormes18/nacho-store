@@ -25,12 +25,10 @@ const ModalProductOptions = ({ product }) => {
       contentLabel="Options Modal"
     >
       <div className="h-100">
-        <header className="d-flex justify-content-end p-3 position-absolute w-100">
+        <header className="d-flex justify-content-end p-3">
           <ButtonClose size="20" handleClose={closeModal} />
         </header>
-        <div className="h-100">
-          <ProductOptions />
-        </div>
+        <ProductOptions />
       </div>
     </Modal>
   );
