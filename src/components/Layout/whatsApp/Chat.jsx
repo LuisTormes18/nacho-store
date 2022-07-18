@@ -1,7 +1,7 @@
-import { AiOutlineClose } from "react-icons/ai";
 import { BsHeadphones } from "react-icons/bs";
 import useForm from "./../../../hooks/useForm";
 import Message from "./Message";
+import { ButtonClose } from "../../common";
 
 const Chat = ({ visible, setVisible }) => {
   const [state, hanleInputChange] = useForm({ message: "" });
@@ -26,12 +26,7 @@ const Chat = ({ visible, setVisible }) => {
             </p>
           </div>
 
-          <AiOutlineClose
-            className="pointer"
-            size="20"
-            color="#f5f5f5"
-            onClick={handleClick}
-          />
+          <ButtonClose size="20" color="#f5f5f5" handleClose={handleClick} />
         </header>
         <div className="chat__body">
           <Message text={`Hola! 👋\n\n ¿En qué podemos ayudarte?`} />

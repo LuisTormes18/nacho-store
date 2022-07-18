@@ -29,24 +29,15 @@
 }
 
 main {
-  /* margin: 0 auto;
-  max-width: 1400px;
-  min-height: 100vh; */
-  /*background-color: #f7f7f7;*/
 }
-/*.navbar-collapse {
-  flex-grow: 0 !important;
-}*/
+
 .text-gray {
   color: var(--dark-gray);
 }
 .text-black {
   color: var(--black);
 }
-/*p {
-  font-size: 14px;
-  color: var(--dark-gray);
-}*/
+
 a {
   text-decoration: none;
 }

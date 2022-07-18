@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
-import { AiOutlineClose } from "react-icons/ai";
 
 import { closeModalLogin } from "../../stateManagement/actions/auth";
 import Authentication from "../auth/Authentication";
 import { styles_M_Login } from "./stylesModals";
+import { ButtonClose } from "../common";
 
 const ModalLogin = ({ children }) => {
   const { modalLoginIsOpen } = useSelector((state) => state.auth);
@@ -22,12 +22,7 @@ const ModalLogin = ({ children }) => {
       contentLabel="Login Modal"
     >
       <div className="d-flex justify-content-end">
-        <AiOutlineClose
-          className="pointer"
-          size="15"
-          color="#000"
-          onClick={closeModal}
-        />
+        <ButtonClose handleClose={closeModal} />
       </div>
       <hr />
 

@@ -13,7 +13,7 @@ const SizeOption = ({ value, sizeOption, selectSize, changeSize }) => {
         checked={selectSize == value ? true : false}
         onChange={changeSize}
       />
-      <label for={`sizesChoice${value}`}>{sizeOption.name}</label>
+      <label>{sizeOption.name}</label>
     </div>
   );
 };

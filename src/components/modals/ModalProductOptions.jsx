@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
-import { AiOutlineClose } from "react-icons/ai";
 
 import Modal from "react-modal";
 import { closeModalOptions } from "../../stateManagement/actions/ui";
 import { styles_M_Options } from "./stylesModals";
 import ProductOptions from "../productOptions/ProductOptions";
+import { ButtonClose } from "./../common";
 
 import "./modals.css";
 
@@ -24,15 +24,14 @@ const ModalProductOptions = ({ product }) => {
       style={styles_M_Options}
       contentLabel="Options Modal"
     >
-      <div className="d-flex justify-content-end p-2">
-        <AiOutlineClose
-          className="pointer"
-          size="20"
-          color="#000"
-          onClick={closeModal}
-        />
+      <div className="h-100">
+        <header className="d-flex justify-content-end p-3 position-absolute w-100">
+          <ButtonClose size="20" handleClose={closeModal} />
+        </header>
+        <div className="h-100">
+          <ProductOptions />
+        </div>
       </div>
-      <ProductOptions />
     </Modal>
   );
 };

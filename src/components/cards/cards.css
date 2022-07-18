@@ -18,6 +18,9 @@
   min-height: 360px;
   max-height: 360px;
 }
+.card-product:hover {
+  /*box-shadow: 0 0px 10px rgb(139 158 167 / 50%);*/
+}
 .card-img-top {
   height: 170px !important;
 }

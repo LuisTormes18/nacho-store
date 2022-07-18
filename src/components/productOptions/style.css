@@ -1,10 +1,10 @@
 .options_content {
   overflow-x: hidden;
   /*overflow-y: scroll ;*/
+  height: 100%;
 }
 
 .image {
-  /*background-color: red;*/
   width: 100%;
 }
 .image img {
